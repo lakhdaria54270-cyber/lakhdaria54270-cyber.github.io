@@ -5,148 +5,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notre histoire — Fiberlink Technology</title>
   <meta name="description" content="Notre histoire — Fiberlink Technology" />
-
   <style>
-    :root{
-      --bg:#070A12;
-      --panel:#0C1020;
-      --text:#EAF0FF;
-      --muted:#A8B3D6;
-      --line:rgba(255,255,255,.08);
-      --shadow:0 24px 60px rgba(0,0,0,.45);
-      --r:22px;
-    }
+    :root{--bg:#070A12;--panel:#0C1020;--text:#EAF0FF;--muted:#A8B3D6;--line:rgba(255,255,255,.08);--shadow:0 24px 60px rgba(0,0,0,.45);--r:22px}
     *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
-      color:var(--text);
-      background:var(--bg);
-    }
+    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:980px;margin:0 auto;padding:0 18px}
+    .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
 
-    header{
-      position:sticky;top:0;z-index:50;
-      backdrop-filter:blur(14px);
-      background:rgba(7,10,18,.65);
-      border-bottom:1px solid var(--line);
-    }
-    .nav{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      padding:14px 0;
-      gap:16px;
-    }
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,10,18,.65);border-bottom:1px solid var(--line)}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
-    .logo{
-      width:40px;height:40px;border-radius:14px;
-      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
-      box-shadow:0 18px 40px rgba(125,211,252,.15);
-    }
+    .logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1))}
     .brand strong{font-size:14px}
     .brand span{display:block;font-size:12px;color:var(--muted)}
-
     .menu{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-    .menu a{
-      height:42px;
-      display:flex;
-      align-items:center;
-      font-size:13px;
-      color:var(--muted);
-      padding:0 12px;
-      border-radius:14px;
-      border:1px solid transparent;
-    }
-    .menu a:hover{
-      color:var(--text);
-      border-color:var(--line);
-      background:rgba(255,255,255,.03);
-    }
+    .menu a{height:42px;display:flex;align-items:center;font-size:13px;color:var(--muted);padding:0 12px;border-radius:14px;border:1px solid transparent}
+    .menu a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
 
     main{padding:36px 0 60px}
+    .card{border-radius:var(--r);border:1px solid var(--line);background:rgba(12,16,32,.55);box-shadow:var(--shadow);padding:30px}
+    h1{margin:0 0 10px;font-size:36px;letter-spacing:-.6px}
+    .subtitle{margin:0 0 22px;color:var(--muted);line-height:1.75;font-size:16px}
 
-    .card{
-      border-radius:var(--r);
-      border:1px solid var(--line);
-      background:rgba(12,16,32,.55);
-      box-shadow:var(--shadow);
-      padding:28px;
-    }
+    h2{margin:26px 0 10px;font-size:18px;letter-spacing:-.2px}
+    p{margin:0;color:var(--muted);line-height:1.8;font-size:15.5px}
 
-    h1{margin:0 0 10px;font-size:34px;letter-spacing:-.5px}
-    .subtitle{
-      margin:0 0 22px;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:16px;
-    }
+    .grid{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
 
-    h2{
-      margin:24px 0 10px;
-      font-size:18px;
-      letter-spacing:-.2px;
-    }
-
-    p{
-      margin:0;
-      color:var(--muted);
-      line-height:1.75;
-      font-size:15.5px;
-    }
-
-    .blocks{
-      margin-top:14px;
-      display:grid;
-      gap:12px;
-    }
-
-    .block{
-      padding:18px 18px;
-      border-radius:18px;
-      border:1px solid var(--line);
+    .box{
+      padding:18px 18px;border-radius:18px;border:1px solid var(--line);
       background:rgba(255,255,255,.02);
+      transition:transform .2s ease, background .2s ease;
     }
-
-    .block strong{
-      display:block;
-      color:var(--text);
-      margin-bottom:6px;
-      font-size:14px;
-      letter-spacing:-.1px;
-    }
+    .box:hover{transform:translateY(-2px);background:rgba(255,255,255,.04)}
+    .box strong{display:block;color:var(--text);margin-bottom:6px;font-size:14px}
+    .box a.more{display:inline-block;margin-top:12px;font-size:13px;color:var(--text);opacity:.9}
 
     .back{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      margin-top:22px;
-      padding:12px 14px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      font-size:13px;
-      color:var(--text);
+      display:inline-flex;align-items:center;gap:8px;margin-top:24px;
+      padding:12px 14px;border-radius:16px;border:1px solid var(--line);
+      background:rgba(255,255,255,.03);font-size:13px;color:var(--text)
     }
     .back:hover{background:rgba(255,255,255,.06)}
   </style>
 </head>
-
 <body>
 
 <header>
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="index.html">
-        <div class="logo" aria-hidden="true"></div>
+        <div class="logo"></div>
         <div>
           <strong>Fiberlink Technology</strong>
           <span>Réseaux • Fibre optique • Technologies</span>
         </div>
       </a>
-
-      <nav class="menu" aria-label="Menu">
+      <nav class="menu">
         <a href="index.html">Accueil</a>
         <a href="partenaires.html">Partenaires</a>
       </nav>
@@ -160,110 +76,57 @@
 
       <h1>Notre histoire</h1>
       <p class="subtitle">
-        Fiberlink Technology s’est construite autour d’une conviction simple :
-        une infrastructure réseau fiable et bien pensée est un levier direct de performance,
-        de productivité et de continuité d’activité.
+        Fiberlink Technology est née d’une passion : construire des réseaux fiables, rapides et durables.
+        Notre activité s’inscrit au cœur des infrastructures modernes : fibre optique, solutions réseau,
+        et technologies de communication adaptées aux environnements professionnels.
       </p>
 
-      <!-- 1 -->
-      <h2>Des solutions de 1er rang qui dopent l’efficacité et les performances</h2>
+      <h2>Une entreprise créée à partir d’une passion</h2>
       <p>
-        Nous concevons et déployons des solutions techniques robustes, adaptées aux exigences
-        des environnements professionnels : performance, disponibilité, sécurité et évolutivité.
-        Chaque projet est traité avec une logique “terrain + qualité”, pour garantir un résultat durable.
+        Tout a commencé sur le terrain, avec une volonté simple : faire mieux.
+        Mieux structurer les installations, mieux sécuriser les réseaux, mieux respecter les standards,
+        et surtout livrer des chantiers propres, maintenables et performants.
+        Cette exigence est devenue notre identité.
       </p>
 
-      <div class="blocks">
-        <div class="block">
-          <strong>✔ Fiabilité & continuité</strong>
-          <p>
-            Nos solutions sont pensées pour limiter les interruptions, améliorer la stabilité,
-            et garantir une exploitation sereine au quotidien.
-          </p>
-        </div>
-
-        <div class="block">
-          <strong>✔ Performance mesurable</strong>
-          <p>
-            Optimisation du réseau, qualité de service, architecture propre :
-            la performance n’est pas un discours, c’est un résultat.
-          </p>
-        </div>
-
-        <div class="block">
-          <strong>✔ Solutions évolutives</strong>
-          <p>
-            Une installation réussie doit pouvoir évoluer : montée en charge, extension,
-            nouveaux sites, nouveaux usages.
-          </p>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <h2>Nos équipes et nos expertises</h2>
+      <h2>Notre activité : connecter, optimiser, sécuriser</h2>
       <p>
-        Notre force repose sur une équipe impliquée, des compétences techniques solides,
-        et une méthode de travail rigoureuse : analyse, conception, installation, tests,
-        documentation et accompagnement.
+        Aujourd’hui, Fiberlink Technology accompagne les entreprises, collectivités et acteurs du bâtiment
+        dans leurs projets de déploiement et d’évolution : infrastructure fibre, réseaux internes,
+        optimisation des performances, mise en service et accompagnement.
       </p>
 
-      <div class="blocks">
-        <div class="block">
-          <strong>✔ Expertise réseau & fibre optique</strong>
-          <p>
-            Déploiement, raccordement, tests, optimisation et mise en service
-            dans le respect des standards professionnels.
-          </p>
-        </div>
-
-        <div class="block">
-          <strong>✔ Qualité d’exécution</strong>
-          <p>
-            Câblage propre, installations structurées, étiquetage, conformité :
-            nous livrons un chantier clair, exploitable et maintenable.
-          </p>
-        </div>
-
-        <div class="block">
-          <strong>✔ Accompagnement & conseils</strong>
-          <p>
-            Nous aidons nos clients à faire les bons choix techniques
-            pour éviter les coûts inutiles et sécuriser l’avenir.
-          </p>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <h2>Responsabilité Sociétale d’Entreprise (RSE)</h2>
+      <h2>Notre engagement : un résultat professionnel, durable et mesurable</h2>
       <p>
-        Nous considérons que la performance technologique doit aller de pair avec
-        une démarche responsable : respect des personnes, qualité du travail,
-        impact environnemental maîtrisé et engagements durables.
+        Chaque projet est traité comme un investissement long terme.
+        Notre méthode repose sur la rigueur technique, la qualité d’exécution,
+        la transparence et une vraie culture du service.
       </p>
 
-      <div class="blocks">
-        <div class="block">
-          <strong>✔ Sécurité & conditions de travail</strong>
+      <h2>En savoir plus</h2>
+      <div class="grid">
+        <div class="box">
+          <strong>Des solutions de 1er rang</strong>
           <p>
-            Nous appliquons une approche rigoureuse en matière de sécurité sur chantier,
-            avec une exigence constante de prévention et de bonnes pratiques.
+            Des architectures robustes, évolutives et pensées pour la performance.
           </p>
+          <a class="more" href="solutions.html">Découvrir →</a>
         </div>
 
-        <div class="block">
-          <strong>✔ Démarche durable</strong>
+        <div class="box">
+          <strong>Nos équipes & expertises</strong>
           <p>
-            Réduction des pertes, optimisation des déplacements, gestion du matériel,
-            et choix de solutions pérennes pour limiter le gaspillage.
+            Une équipe terrain + une méthode pro : étude, installation, tests, livraison.
           </p>
+          <a class="more" href="equipes.html">Découvrir →</a>
         </div>
 
-        <div class="block">
-          <strong>✔ Respect client & transparence</strong>
+        <div class="box">
+          <strong>Responsabilité Sociétale (RSE)</strong>
           <p>
-            Engagement sur la qualité, transparence dans les échanges,
-            et volonté de construire une relation de confiance sur le long terme.
+            Sécurité, qualité, respect, durabilité : la performance doit être responsable.
           </p>
+          <a class="more" href="rse.html">Découvrir →</a>
         </div>
       </div>
 
