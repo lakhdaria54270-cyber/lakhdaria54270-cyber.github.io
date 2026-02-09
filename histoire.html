@@ -18,7 +18,12 @@
       --green:#35ff7a;
     }
     *{box-sizing:border-box}
-    body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg)}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg)
+    }
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 
@@ -165,18 +170,59 @@
       color:var(--muted);
       line-height:1.8;
       font-size:15px;
+      margin-top:18px;
     }
     article h2{
       color:var(--text);
-      margin:0 0 10px;
+      margin:22px 0 10px;
       font-size:18px;
     }
     article p{margin:0 0 14px}
+
+    /* sections */
+    .feature-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:14px;
+      margin-top:18px;
+    }
+    .feature{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      padding:16px;
+    }
+    .feature h3{
+      margin:0 0 6px;
+      font-size:14px;
+      color:var(--text);
+      letter-spacing:0.2px;
+    }
+    .feature p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.6;
+      font-size:13px;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:9px 12px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(7,10,18,.35);
+      color:var(--green);
+      font-weight:800;
+      font-size:12px;
+      margin-top:16px;
+    }
 
     /* mobile */
     @media (max-width: 900px){
       .dropdown:hover .dropdown-menu{display:none}
       .page-image img{height:240px}
+      .feature-grid{grid-template-columns:1fr}
     }
     .dropdown.open .dropdown-menu{display:block}
   </style>
@@ -231,26 +277,83 @@
       <div class="card">
         <h1>Notre histoire</h1>
         <p class="lead">
-          Depuis nos débuts, nous construisons des solutions réseau fiables, modernes et évolutives,
-          au service des entreprises et des infrastructures.
+          Une société créée à partir d’une passion : connecter les infrastructures avec précision,
+          fiabilité et performance.
         </p>
 
+        <span class="badge">⚡ Think Fast, Link Smart</span>
+
         <article>
-          <h2>Une vision claire : connecter mieux, connecter durable</h2>
+          <h2>Une entreprise née du terrain</h2>
           <p>
-            Fiberlink Technology est née avec une ambition simple : proposer des solutions réseau et fibre optique
-            de haute qualité, adaptées aux besoins réels du terrain.
+            Fiberlink Technology est née d’une passion très simple : la fibre optique, le réseau,
+            et surtout la satisfaction de voir une infrastructure fonctionner parfaitement, du premier test
+            jusqu’à la mise en service.
           </p>
 
           <p>
-            Notre approche repose sur la rigueur technique, la réactivité et une volonté constante d’amélioration.
-            Nous accompagnons nos clients dans leurs projets de déploiement, d’évolution et de sécurisation
-            de leurs infrastructures.
+            Depuis le départ, notre objectif est clair : apporter des solutions modernes, solides et évolutives,
+            capables de répondre aux besoins des entreprises, des opérateurs et des projets d’envergure.
           </p>
 
           <p>
-            Aujourd’hui, nous continuons à évoluer avec les technologies et les standards du secteur,
-            afin d’offrir des prestations modernes, performantes et durables.
+            Dans un secteur où la précision fait la différence, nous avons construit notre identité autour de la rigueur,
+            de la réactivité et de la qualité d’exécution.
+          </p>
+
+          <h2>Des solutions de 1er rang pour booster les performances</h2>
+          <p>
+            Nous concevons et déployons des solutions de 1er rang qui dopent l’efficacité, la stabilité
+            et les performances des réseaux.
+          </p>
+
+          <div class="feature-grid">
+            <div class="feature">
+              <h3>🔧 Fiabilité & qualité</h3>
+              <p>
+                Des installations propres, testées, documentées, et pensées pour durer.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>📈 Performance réseau</h3>
+              <p>
+                Optimisation du débit, réduction des pertes, et infrastructure évolutive.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>🛡️ Continuité de service</h3>
+              <p>
+                Une approche professionnelle pour garantir stabilité, sécurité et disponibilité.
+              </p>
+            </div>
+          </div>
+
+          <h2>Nos équipes : expertise FTTO, FTTE, FTTH, RTE</h2>
+          <p>
+            Nos équipes maîtrisent les standards et les architectures du domaine :
+            <strong>FTTO</strong>, <strong>FTTE</strong>, <strong>FTTH</strong> ainsi que les environnements
+            techniques liés aux infrastructures et réseaux de transport (<strong>RTE</strong>).
+          </p>
+
+          <p>
+            Grâce à cette expertise, nous intervenons sur des projets variés : déploiements, extensions,
+            modernisation, raccordements, mise en conformité et maintenance.
+          </p>
+
+          <h2>Responsabilité Sociétale d’Entreprise (RSE)</h2>
+          <p>
+            Nous croyons qu’une entreprise moderne doit construire durablement : pour ses clients,
+            pour ses équipes et pour son environnement.
+          </p>
+
+          <p>
+            Notre démarche RSE repose sur des engagements concrets : sécurité sur site, respect des bonnes pratiques,
+            réduction des déchets, optimisation des interventions et valorisation des compétences.
+          </p>
+
+          <p>
+            Nous avançons avec une vision responsable : des réseaux performants aujourd’hui,
+            et une qualité de service durable pour demain.
           </p>
         </article>
       </div>
