@@ -4,67 +4,215 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Notre histoire — Fiberlink Technology</title>
-  <meta name="description" content="Notre histoire — Fiberlink Technology" />
+  <meta name="description" content="Découvrez l'histoire de Fiberlink Technology." />
+
   <style>
-    :root{--bg:#070A12;--panel:#0C1020;--text:#EAF0FF;--muted:#A8B3D6;--line:rgba(255,255,255,.08);--shadow:0 24px 60px rgba(0,0,0,.45);--r:22px}
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
     *{box-sizing:border-box}
     body{margin:0;font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;color:var(--text);background:var(--bg)}
     a{color:inherit;text-decoration:none}
-    .wrap{max-width:1000px;margin:0 auto;padding:0 18px}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 
-    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(7,10,18,.65);border-bottom:1px solid var(--line)}
-    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .logo{width:40px;height:40px;border-radius:14px;background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1))}
-    .brand strong{font-size:14px}
-    .brand span{display:block;font-size:12px;color:var(--muted)}
-    .menu{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:flex-end}
-    .menu a{height:42px;display:flex;align-items:center;font-size:13px;color:var(--muted);padding:0 12px;border-radius:14px;border:1px solid transparent}
-    .menu a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.03)}
-
-    main{padding:36px 0 60px}
-    .card{border-radius:var(--r);border:1px solid var(--line);background:rgba(12,16,32,.55);box-shadow:var(--shadow);padding:30px}
-    h1{margin:0 0 10px;font-size:36px;letter-spacing:-.6px}
-    .subtitle{margin:0 0 22px;color:var(--muted);line-height:1.75;font-size:16px}
-
-    h2{margin:26px 0 10px;font-size:18px;letter-spacing:-.2px}
-    p{margin:0;color:var(--muted);line-height:1.8;font-size:15.5px}
-
-    .grid{margin-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-    @media (max-width: 900px){.grid{grid-template-columns:1fr}}
-
-    .box{
-      padding:18px 18px;border-radius:18px;border:1px solid var(--line);
-      background:rgba(255,255,255,.02);
-      transition:transform .2s ease, background .2s ease;
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
     }
-    .box:hover{transform:translateY(-2px);background:rgba(255,255,255,.04)}
-    .box strong{display:block;color:var(--text);margin-bottom:6px;font-size:14px}
-    .box a.more{display:inline-block;margin-top:12px;font-size:13px;color:var(--text);opacity:.9}
-
-    .back{
-      display:inline-flex;align-items:center;gap:8px;margin-top:24px;
-      padding:12px 14px;border-radius:16px;border:1px solid var(--line);
-      background:rgba(255,255,255,.03);font-size:13px;color:var(--text)
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
     }
-    .back:hover{background:rgba(255,255,255,.06)}
+
+    /* ===== BRAND TOP ===== */
+    .brand{display:flex;align-items:center;gap:12px;min-width:260px}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+    .brand-name{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+    }
+    .brand-sub{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .g{color:var(--green);font-weight:900}
+
+    /* MENU */
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .menu > a,
+    .menu > .dropdown > button{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+    .menu > a:hover,
+    .menu > .dropdown > button:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* DROPDOWN */
+    .dropdown{position:relative}
+    .caret{opacity:.75}
+    .dropdown-menu{
+      position:absolute;
+      top:46px;
+      left:0;
+      min-width:220px;
+      background:rgba(12,16,32,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:8px;
+      display:none;
+    }
+    .dropdown-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .dropdown-menu a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.04)
+    }
+    .dropdown:hover .dropdown-menu{display:block}
+
+    main{padding:40px 0 60px}
+
+    /* ===== PAGE ===== */
+    .page{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:18px;
+    }
+
+    .card{
+      border-radius:var(--r);
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:40px;
+      letter-spacing:-.8px;
+      line-height:1.05;
+    }
+
+    .lead{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+      margin:0 0 0;
+    }
+
+    /* ===== IMAGE AU DESSUS DE L'ARTICLE ===== */
+    .page-image{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+    }
+    .page-image img{
+      width:100%;
+      height:320px;
+      object-fit:cover;
+      display:block;
+    }
+
+    article{
+      color:var(--muted);
+      line-height:1.8;
+      font-size:15px;
+    }
+    article h2{
+      color:var(--text);
+      margin:0 0 10px;
+      font-size:18px;
+    }
+    article p{margin:0 0 14px}
+
+    /* mobile */
+    @media (max-width: 900px){
+      .dropdown:hover .dropdown-menu{display:none}
+      .page-image img{height:240px}
+    }
+    .dropdown.open .dropdown-menu{display:block}
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="wrap">
     <div class="nav">
       <a class="brand" href="index.html">
-        <div class="logo"></div>
+        <div class="logo" aria-hidden="true"></div>
         <div>
-          <strong>Fiberlink Technology</strong>
-          <span>Réseaux • Fibre optique • Technologies</span>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
         </div>
       </a>
-      <nav class="menu">
-        <a href="index.html">Accueil</a>
-        <a href="partenaires.html">Partenaires</a>
+
+      <nav class="menu" aria-label="Menu">
+        <div class="dropdown" id="drop">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Nous connaître <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="histoire.html">Notre histoire</a>
+            <a href="partenaires.html">Nos partenaires</a>
+          </div>
+        </div>
+
+        <a href="#">Service</a>
+        <a href="#">Secteur d’activité</a>
+        <a href="#">Nos réalisations</a>
       </nav>
     </div>
   </div>
@@ -72,69 +220,61 @@
 
 <main>
   <div class="wrap">
-    <article class="card">
+    <section class="page">
 
-      <h1>Notre histoire</h1>
-      <p class="subtitle">
-        Fiberlink Technology est née d’une passion : construire des réseaux fiables, rapides et durables.
-        Notre activité s’inscrit au cœur des infrastructures modernes : fibre optique, solutions réseau,
-        et technologies de communication adaptées aux environnements professionnels.
-      </p>
-
-      <h2>Une entreprise créée à partir d’une passion</h2>
-      <p>
-        Tout a commencé sur le terrain, avec une volonté simple : faire mieux.
-        Mieux structurer les installations, mieux sécuriser les réseaux, mieux respecter les standards,
-        et surtout livrer des chantiers propres, maintenables et performants.
-        Cette exigence est devenue notre identité.
-      </p>
-
-      <h2>Notre activité : connecter, optimiser, sécuriser</h2>
-      <p>
-        Aujourd’hui, Fiberlink Technology accompagne les entreprises, collectivités et acteurs du bâtiment
-        dans leurs projets de déploiement et d’évolution : infrastructure fibre, réseaux internes,
-        optimisation des performances, mise en service et accompagnement.
-      </p>
-
-      <h2>Notre engagement : un résultat professionnel, durable et mesurable</h2>
-      <p>
-        Chaque projet est traité comme un investissement long terme.
-        Notre méthode repose sur la rigueur technique, la qualité d’exécution,
-        la transparence et une vraie culture du service.
-      </p>
-
-      <h2>En savoir plus</h2>
-      <div class="grid">
-        <div class="box">
-          <strong>Des solutions de 1er rang</strong>
-          <p>
-            Des architectures robustes, évolutives et pensées pour la performance.
-          </p>
-          <a class="more" href="solutions.html">Découvrir →</a>
-        </div>
-
-        <div class="box">
-          <strong>Nos équipes & expertises</strong>
-          <p>
-            Une équipe terrain + une méthode pro : étude, installation, tests, livraison.
-          </p>
-          <a class="more" href="equipes.html">Découvrir →</a>
-        </div>
-
-        <div class="box">
-          <strong>Responsabilité Sociétale (RSE)</strong>
-          <p>
-            Sécurité, qualité, respect, durabilité : la performance doit être responsable.
-          </p>
-          <a class="more" href="rse.html">Découvrir →</a>
-        </div>
+      <!-- IMAGE AU DESSUS -->
+      <div class="page-image">
+        <img src="assets/histoire.jpeg" alt="Notre histoire - Fiberlink Technology">
       </div>
 
-      <a class="back" href="index.html">← Retour à l’accueil</a>
+      <!-- ARTICLE -->
+      <div class="card">
+        <h1>Notre histoire</h1>
+        <p class="lead">
+          Depuis nos débuts, nous construisons des solutions réseau fiables, modernes et évolutives,
+          au service des entreprises et des infrastructures.
+        </p>
 
-    </article>
+        <article>
+          <h2>Une vision claire : connecter mieux, connecter durable</h2>
+          <p>
+            Fiberlink Technology est née avec une ambition simple : proposer des solutions réseau et fibre optique
+            de haute qualité, adaptées aux besoins réels du terrain.
+          </p>
+
+          <p>
+            Notre approche repose sur la rigueur technique, la réactivité et une volonté constante d’amélioration.
+            Nous accompagnons nos clients dans leurs projets de déploiement, d’évolution et de sécurisation
+            de leurs infrastructures.
+          </p>
+
+          <p>
+            Aujourd’hui, nous continuons à évoluer avec les technologies et les standards du secteur,
+            afin d’offrir des prestations modernes, performantes et durables.
+          </p>
+        </article>
+      </div>
+
+    </section>
   </div>
 </main>
+
+<script>
+  const drop = document.getElementById("drop");
+  const btn = drop.querySelector("button");
+
+  btn.addEventListener("click", () => {
+    const isOpen = drop.classList.toggle("open");
+    btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  document.addEventListener("click", (e) => {
+    if(!drop.contains(e.target)){
+      drop.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+    }
+  });
+</script>
 
 </body>
 </html>
