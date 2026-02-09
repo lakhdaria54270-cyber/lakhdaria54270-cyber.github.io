@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fiberlink Technology</title>
   <meta name="description" content="Fiberlink Technology — Réseaux, Fibre optique, Technologies" />
+
   <style>
     :root{
       --bg:#070A12;
@@ -142,44 +143,41 @@
       font-weight:700;
     }
 
-    /* ANIMATION */
-    .visual{
-      position:relative;
-      overflow:hidden;
-      min-height:320px;
+    /* ===== VIDEO HERO (remplace l'animation) ===== */
+    .hero-video{
+      position: relative;
+      overflow: hidden;
+      min-height: 320px;
     }
-    .blob{
-      position:absolute;inset:-40%;
-      background:
-        radial-gradient(circle at 30% 40%, rgba(125,211,252,.45), transparent 55%),
-        radial-gradient(circle at 70% 60%, rgba(167,139,250,.45), transparent 55%),
-        radial-gradient(circle at 50% 50%, rgba(34,211,238,.25), transparent 60%);
-      filter:blur(18px);
-      animation: float 10s ease-in-out infinite;
-      transform:translate3d(0,0,0);
+
+    .hero-video video{
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.35;
+      transform: scale(1.02);
     }
-    @keyframes float{
-      0%{transform:translate(-2%, -1%) scale(1)}
-      50%{transform:translate(2%, 2%) scale(1.05)}
-      100%{transform:translate(-2%, -1%) scale(1)}
+
+    .hero-overlay{
+      position: relative;
+      z-index: 2;
+      height: 100%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: flex-start;
+      padding: 18px;
     }
-    .grid{
-      position:absolute;inset:0;
-      background-image:
-        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size:64px 64px;
-      mask-image:radial-gradient(circle at 50% 40%, black 40%, transparent 70%);
-      opacity:.35;
-    }
-    .tag{
-      position:absolute;left:18px;bottom:18px;
-      padding:10px 12px;border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(7,10,18,.55);
-      color:var(--muted);
-      font-size:13px;
-      backdrop-filter:blur(10px);
+
+    .hero-tag{
+      padding: 10px 12px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,.08);
+      background: rgba(7,10,18,.55);
+      backdrop-filter: blur(10px);
+      color: #A8B3D6;
+      font-size: 13px;
     }
 
     /* mobile */
@@ -191,6 +189,7 @@
     .dropdown.open .dropdown-menu{display:block}
   </style>
 </head>
+
 <body>
 
 <header>
@@ -239,11 +238,17 @@
         </div>
       </div>
 
-      <div class="card visual" aria-hidden="true">
-        <div class="blob"></div>
-        <div class="grid"></div>
-        <div class="tag">Animation moderne • 100% CSS</div>
+      <!-- VIDEO -->
+      <div class="card hero-video">
+        <video autoplay muted loop playsinline>
+          <source src="assets/hero.mp4" type="video/mp4">
+        </video>
+
+        <div class="hero-overlay">
+          <div class="hero-tag">Animation vidéo • Style futuriste</div>
+        </div>
       </div>
+
     </section>
   </div>
 </main>
@@ -258,7 +263,7 @@
   });
 
   document.addEventListener("click", (e) => {
-    if (!drop.contains(e.target)) {
+    if(!drop.contains(e.target)){
       drop.classList.remove("open");
       btn.setAttribute("aria-expanded", "false");
     }
