@@ -1,22 +1,444 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fiberlink Technology</title>
+  <meta name="description" content="Fiberlink Technology — Solutions fibre optique, réseaux et technologies." />
+
   <style>
-    body {font-family: Arial, sans-serif; padding: 40px; background:#0b1220; color:white;}
-    .box {max-width: 900px; margin:auto; background:#111a2e; padding:40px; border-radius:20px;}
-    h1 {font-size: 42px; margin: 0 0 10px;}
-    p {font-size: 18px; opacity:0.9;}
-    a {color:#7dd3fc;}
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --panel2:#0B1220;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --brand:#7DD3FC;
+      --brand2:#A78BFA;
+      --ok:#34D399;
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+      --r: 22px;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
+      background: radial-gradient(1200px 700px at 20% 10%, rgba(125,211,252,.18), transparent 55%),
+                  radial-gradient(900px 600px at 80% 20%, rgba(167,139,250,.14), transparent 60%),
+                  radial-gradient(900px 700px at 50% 100%, rgba(52,211,153,.08), transparent 60%),
+                  var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+
+    .wrap{max-width:1180px; margin:0 auto; padding:0 18px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter: blur(14px);
+      background: rgba(7,10,18,.55);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:14px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width: 220px;
+    }
+
+    .logo{
+      width:38px; height:38px;
+      border-radius:14px;
+      background: linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow: 0 18px 45px rgba(125,211,252,.18);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.35), transparent 40%);
+      animation: floatGlow 6s ease-in-out infinite;
+    }
+    @keyframes floatGlow{0%,100%{transform:translate(0,0)}50%{transform:translate(10%,12%)}}
+
+    .brand strong{font-size:14px; letter-spacing:.2px}
+    .brand span{display:block; font-size:12px; color:var(--muted)}
+
+    .menu{display:flex; align-items:center; gap:18px}
+    .menu > a, .menu > button{
+      font-size:13px;
+      color:var(--muted);
+      padding:10px 10px;
+      border-radius: 14px;
+      border:1px solid transparent;
+      background: transparent;
+      cursor:pointer;
+      transition: .18s ease;
+      white-space:nowrap;
+    }
+    .menu > a:hover, .menu > button:hover{
+      color:var(--text);
+      border-color: var(--line);
+      background: rgba(255,255,255,.03);
+    }
+
+    .dropdown{position:relative}
+    .dropdown-panel{
+      position:absolute;
+      top: 44px;
+      left:0;
+      min-width: 240px;
+      padding:10px;
+      border-radius: 18px;
+      background: rgba(12,16,32,.92);
+      border:1px solid var(--line);
+      box-shadow: var(--shadow);
+      opacity:0;
+      transform: translateY(-6px);
+      pointer-events:none;
+      transition: .18s ease;
+    }
+    .dropdown:hover .dropdown-panel,
+    .dropdown[data-open="true"] .dropdown-panel{
+      opacity:1;
+      transform: translateY(0);
+      pointer-events:auto;
+    }
+
+    .dropdown-panel a{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding:12px 12px;
+      border-radius: 14px;
+      color: var(--text);
+      transition:.18s ease;
+    }
+    .dropdown-panel a:hover{
+      background: rgba(255,255,255,.04);
+    }
+    .tag{
+      font-size:11px;
+      color: var(--muted);
+      border:1px solid var(--line);
+      padding:4px 8px;
+      border-radius: 999px;
+    }
+
+    .burger{
+      display:none;
+      width:42px; height:42px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      cursor:pointer;
+      align-items:center;
+      justify-content:center;
+      gap:4px;
+      flex-direction:column;
+    }
+    .burger span{width:18px; height:2px; background:rgba(234,240,255,.75); border-radius:99px}
+
+    .mobile{
+      display:none;
+      padding: 0 0 14px;
+    }
+    .mobile a, .mobile button{
+      width:100%;
+      text-align:left;
+      font-size:14px;
+      color:var(--muted);
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      cursor:pointer;
+      transition:.18s ease;
+    }
+    .mobile a:hover, .mobile button:hover{color:var(--text)}
+
+    .mobile .sub{
+      margin-top:10px;
+      padding-left: 10px;
+      display:none;
+      gap:10px;
+      flex-direction:column;
+    }
+    .mobile .sub a{border-style:dashed}
+
+    .hero{
+      padding: 54px 0 28px;
+    }
+
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 22px;
+      align-items:stretch;
+    }
+
+    .card{
+      border-radius: var(--r);
+      border: 1px solid var(--line);
+      background: rgba(12,16,32,.55);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+
+    .hero-left{padding: 30px}
+
+    .kicker{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      background: rgba(255,255,255,.02);
+      font-size: 12px;
+      margin-bottom: 16px;
+    }
+
+    h1{
+      margin:0;
+      font-size: clamp(30px, 3.2vw, 46px);
+      line-height:1.05;
+      letter-spacing:-.5px;
+    }
+
+    .lead{
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height:1.55;
+      max-width: 62ch;
+    }
+
+    .cta{
+      display:flex;
+      gap:12px;
+      margin-top: 22px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding: 12px 16px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.02);
+      color: var(--text);
+      font-weight: 600;
+      font-size: 13px;
+      transition: .18s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.04)}
+
+    .btn.primary{
+      border-color: rgba(125,211,252,.28);
+      background: linear-gradient(135deg, rgba(125,211,252,.16), rgba(167,139,250,.12));
+    }
+
+    .hero-right{
+      position:relative;
+      min-height: 360px;
+    }
+
+    .animated{
+      position:absolute;
+      inset:0;
+      border-radius: var(--r);
+      overflow:hidden;
+      background:
+        radial-gradient(1200px 700px at 20% 20%, rgba(125,211,252,.25), transparent 55%),
+        radial-gradient(900px 700px at 80% 30%, rgba(167,139,250,.22), transparent 60%),
+        radial-gradient(900px 700px at 40% 80%, rgba(52,211,153,.16), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.03), transparent);
+    }
+
+    .animated::before{
+      content:"";
+      position:absolute;
+      inset:-30%;
+      background: conic-gradient(from 180deg, rgba(125,211,252,.18), rgba(167,139,250,.16), rgba(52,211,153,.12), rgba(125,211,252,.18));
+      filter: blur(20px);
+      animation: spin 12s linear infinite;
+      opacity:.85;
+    }
+
+    .animated::after{
+      content:"";
+      position:absolute;
+      inset:0;
+      background: radial-gradient(circle at 30% 30%, rgba(255,255,255,.14), transparent 45%);
+      mix-blend-mode: screen;
+      animation: drift 7s ease-in-out infinite;
+    }
+
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(12px,16px)}}
+
+    .hero-right .label{
+      position:absolute;
+      left:18px;
+      bottom:18px;
+      padding: 10px 12px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(7,10,18,.55);
+      backdrop-filter: blur(10px);
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    footer{
+      padding: 30px 0 40px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    @media (max-width: 900px){
+      .hero-grid{grid-template-columns: 1fr;}
+      .hero-right{min-height: 280px}
+      .brand{min-width:auto}
+      .menu{display:none}
+      .burger{display:flex}
+      .mobile{display:flex; flex-direction:column; gap:10px}
+    }
   </style>
 </head>
 <body>
-  <div class="box">
-    <h1>Fiberlink Technology</h1>
-    <p>Solutions réseau, fibre optique et technologies.</p>
-    <p>📩 Contact : <a href="mailto:contact@fiberlinktechnology.fr">contact@fiberlinktechnology.fr</a></p>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html" aria-label="Accueil">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <strong>Fiberlink Technology</strong>
+          <span>Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu principal">
+        <div class="dropdown" id="dropdown">
+          <button type="button" aria-haspopup="true" aria-expanded="false">Nous connaître ▾</button>
+          <div class="dropdown-panel" role="menu" aria-label="Sous-menu Nous connaître">
+            <a href="histoire.html">Notre histoire <span class="tag">Article</span></a>
+            <a href="partenaires.html">Nos partenaires <span class="tag">Article</span></a>
+          </div>
+        </div>
+
+        <a href="#" onclick="alert('On le fera juste après 😊')">Services</a>
+        <a href="#" onclick="alert('On le fera juste après 😊')">Secteur d’activité</a>
+        <a href="#" onclick="alert('On le fera juste après 😊')">Nos réalisations</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <div class="mobile" id="mobile" hidden>
+      <button id="mobileKnow">Nous connaître ▾</button>
+      <div class="sub" id="mobileSub">
+        <a href="histoire.html">Notre histoire</a>
+        <a href="partenaires.html">Nos partenaires</a>
+      </div>
+      <a href="#" onclick="alert('On le fera juste après 😊')">Services</a>
+      <a href="#" onclick="alert('On le fera juste après 😊')">Secteur d’activité</a>
+      <a href="#" onclick="alert('On le fera juste après 😊')">Nos réalisations</a>
+    </div>
   </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-grid">
+
+        <div class="card hero-left">
+          <div class="kicker">⚡ Site en cours de création — étape par étape</div>
+          <h1>Votre partenaire pour des réseaux fiables et une infrastructure moderne.</h1>
+          <p class="lead">
+            Fiberlink Technology accompagne les entreprises et professionnels avec des solutions
+            en fibre optique, réseau, câblage, installation et maintenance.
+          </p>
+
+          <div class="cta">
+            <a class="btn primary" href="contact.html" onclick="alert('On fera la page Contact après 😊'); return false;">Demander un devis</a>
+            <a class="btn" href="services.html" onclick="alert('On crée cette page juste après 😊'); return false;">Voir nos services</a>
+          </div>
+        </div>
+
+        <div class="card hero-right" aria-label="Image animée">
+          <div class="animated" aria-hidden="true"></div>
+          <div class="label">Animation (CSS) • rapide • moderne</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    © <span id="year"></span> Fiberlink Technology — Tous droits réservés.
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const burger = document.getElementById('burger');
+  const mobile = document.getElementById('mobile');
+  const mobileKnow = document.getElementById('mobileKnow');
+  const mobileSub = document.getElementById('mobileSub');
+
+  burger.addEventListener('click', () => {
+    const isHidden = mobile.hasAttribute('hidden');
+    if (isHidden) mobile.removeAttribute('hidden');
+    else mobile.setAttribute('hidden', '');
+  });
+
+  mobileKnow.addEventListener('click', () => {
+    const isOpen = mobileSub.style.display === 'flex';
+    mobileSub.style.display = isOpen ? 'none' : 'flex';
+  });
+
+  const dropdown = document.getElementById('dropdown');
+  dropdown.addEventListener('click', (e) => {
+    const open = dropdown.getAttribute('data-open') === 'true';
+    dropdown.setAttribute('data-open', open ? 'false' : 'true');
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!dropdown.contains(e.target)) dropdown.setAttribute('data-open', 'false');
+  });
+</script>
+
 </body>
 </html>
