@@ -1,1 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dépannage — Fiberlink Technology</title>
+  <meta name="description" content="Dépannage FTTH, FTTO, FTTE — Intervention rapide et fiable." />
 
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg)
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{display:flex;align-items:center;gap:12px;min-width:260px}
+    .logo{
+      width:40px;height:40px;border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+    .brand-name{font-size:14px;font-weight:800;line-height:1.1;margin:0}
+    .brand-sub{display:block;font-size:12px;color:var(--muted);margin-top:2px}
+    .g{color:var(--green);font-weight:900}
+
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .menu > a,
+    .menu > .dropdown > button{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+    .menu > a:hover,
+    .menu > .dropdown > button:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    .dropdown{position:relative}
+    .caret{opacity:.75}
+    .dropdown-menu{
+      position:absolute;
+      top:46px;
+      left:0;
+      min-width:220px;
+      background:rgba(12,16,32,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:8px;
+      display:none;
+    }
+    .dropdown-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    .dropdown-menu a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.04)
+    }
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown.open .dropdown-menu{display:block}
+
+    main{padding:40px 0 60px}
+
+    .card{
+      border-radius:var(--r);
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:28px;
+    }
+
+    h1{
+      margin:0 0 10px;
+      font-size:40px;
+      letter-spacing:-.8px;
+      line-height:1.05;
+    }
+
+    .lead{
+      color:var(--muted);
+      line-height:1.7;
+      font-size:16px;
+      margin:0 0 0;
+    }
+
+    /* ===== LAYOUT ARTICLE + IMAGE ===== */
+    .service-layout{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+      align-items:start;
+    }
+
+    article{
+      color:var(--muted);
+      line-height:1.85;
+      font-size:15px;
+    }
+    article h2{
+      color:var(--text);
+      margin:18px 0 10px;
+      font-size:18px;
+    }
+    article p{margin:0 0 14px}
+
+    .service-image{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+      background:#000;
+      position:sticky;
+      top:110px;
+    }
+    .service-image img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      display:block;
+      opacity:.92;
+    }
+
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:10px;
+      margin-top:14px;
+    }
+    .mini{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.02);
+      padding:14px;
+    }
+    .mini strong{color:var(--text)}
+
+    @media (max-width: 900px){
+      .dropdown:hover .dropdown-menu{display:none}
+      .service-layout{grid-template-columns:1fr}
+      .service-image{position:relative;top:auto}
+      .service-image img{height:260px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu">
+
+        <div class="dropdown" id="dropAbout">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Nous connaître <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="histoire.html">Notre histoire</a>
+            <a href="partenaires.html">Nos partenaires</a>
+          </div>
+        </div>
+
+        <div class="dropdown" id="dropServices">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Service <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="depannage.html">Dépannage</a>
+            <a href="maintenance.html">Maintenance</a>
+          </div>
+        </div>
+
+        <a href="#">Secteur d’activité</a>
+        <a href="#">Nos réalisations</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <section class="card">
+      <h1>Dépannage</h1>
+      <p class="lead">
+        Intervention rapide, diagnostic précis et remise en service fiable sur les infrastructures
+        <strong>FTTH</strong>, <strong>FTTO</strong> et <strong>FTTE</strong>.
+      </p>
+
+      <div class="service-layout">
+
+        <!-- ARTICLE À GAUCHE -->
+        <article>
+          <h2>Un dépannage fibre qui va droit au problème</h2>
+          <p>
+            Une coupure fibre, une baisse de débit ou une instabilité réseau peut bloquer une entreprise,
+            un site industriel ou des dizaines d’abonnés.
+            Chez <strong>Fiberlink Technology</strong>, nous intervenons avec une méthode simple :
+            <strong>localiser</strong>, <strong>corriger</strong>, <strong>sécuriser</strong> et <strong>tester</strong>.
+          </p>
+
+          <h2>Dépannage FTTH : rétablir le service sans perte de temps</h2>
+          <p>
+            En environnement <strong>FTTH</strong>, la priorité est de remettre le client en service rapidement,
+            tout en respectant les règles de raccordement et la propreté des soudures.
+            Nous intervenons sur les défauts les plus fréquents : rupture de câble, connectique,
+            boîtier PTO, tiroir optique, ou incident sur PBO / PM.
+          </p>
+
+          <h2>Dépannage FTTO / FTTE : continuité de service pour les entreprises</h2>
+          <p>
+            Les architectures <strong>FTTO</strong> et <strong>FTTE</strong> demandent une précision encore plus élevée :
+            une seule fibre impactée peut stopper un étage, une baie, un service ou une application critique.
+            Nos équipes réalisent des interventions propres : repérage, mesures, remplacement,
+            reprise de jarretières, nettoyage connectique et validation complète.
+          </p>
+
+          <h2>Notre méthode : mesures, traçabilité et remise en conformité</h2>
+          <p>
+            Chaque dépannage est réalisé avec une logique professionnelle :
+            localisation du défaut, contrôle des pertes, remise en état et validation finale.
+            Nous privilégions toujours une solution durable plutôt qu’un “dépannage temporaire”.
+          </p>
+
+          <div class="mini-grid">
+            <div class="mini">
+              <strong>⚡ Diagnostic rapide</strong><br>
+              Tests, mesures et localisation du défaut avec précision.
+            </div>
+            <div class="mini">
+              <strong>🧰 Intervention propre</strong><br>
+              Reprises de soudures, connectiques, boîtiers et raccordements.
+            </div>
+            <div class="mini">
+              <strong>✅ Tests & remise en service</strong><br>
+              Contrôle final, validation et réseau stable après intervention.
+            </div>
+          </div>
+        </article>
+
+        <!-- PHOTO À DROITE -->
+        <aside class="service-image">
+          <img src="assets/depannage.png" alt="Dépannage fibre optique - Fiberlink Technology">
+        </aside>
+
+      </div>
+    </section>
+  </div>
+</main>
+
+<script>
+  function initDropdown(id){
+    const drop = document.getElementById(id);
+    const btn = drop.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      const isOpen = drop.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if(!drop.contains(e.target)){
+        drop.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  initDropdown("dropAbout");
+  initDropdown("dropServices");
+</script>
+
+</body>
+</html>
