@@ -167,34 +167,7 @@
       color:var(--muted);
       line-height:1.7;
       font-size:14px;
-      max-width:860px;
-    }
-
-    .back-row{
-      display:flex;
-      justify-content:flex-start;
-      margin:18px 0 0;
-    }
-
-    .back-btn{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      height:44px;
-      padding:0 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:13px;
-      font-weight:800;
-      transition:.2s ease;
-    }
-
-    .back-btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(255,255,255,.18);
-      background:rgba(255,255,255,.06);
+      max-width:900px;
     }
 
     /* ===== ARTICLE LAYOUT ===== */
@@ -223,7 +196,7 @@
     .article p{
       margin:0 0 14px;
       color:var(--muted);
-      line-height:1.8;
+      line-height:1.85;
       font-size:14px;
     }
 
@@ -261,7 +234,7 @@
       border:1px solid var(--line);
       background:#000;
       box-shadow:var(--shadow);
-      min-height:360px;
+      min-height:380px;
     }
 
     .img-box img{
@@ -375,53 +348,72 @@
     <section class="sector-hero">
       <h1>Télécoms & Opérateurs</h1>
       <p>
-        Dans un secteur où chaque milliseconde compte, Fiberlink Technology accompagne les opérateurs,
-        sous-traitants et acteurs télécoms dans le déploiement, l’optimisation et la fiabilisation
-        des infrastructures fibre et réseau.  
-        Notre mission : livrer une connectivité robuste, évolutive et prête pour la montée en charge.
+        Dans un secteur où la performance n’est pas une option, Fiberlink Technology accompagne
+        les opérateurs, sous-traitants et acteurs télécoms dans le déploiement, l’optimisation
+        et la fiabilisation des infrastructures fibre.
+        Notre objectif : livrer une connectivité robuste, évolutive, et prête pour la montée en charge.
       </p>
-
-      <div class="back-row">
-        <a class="back-btn" href="index.html">← Retour Accueil</a>
-      </div>
     </section>
 
     <section class="sector-grid">
 
       <!-- ARTICLE À GAUCHE -->
       <div class="card article">
-        <h2>Un réseau solide. Une exécution chirurgicale.</h2>
+        <h2>Une qualité opérateur. Une exécution chirurgicale.</h2>
 
         <p>
           Le monde télécom ne pardonne pas l’approximation : chaque raccordement, chaque jarretière,
-          chaque soudure et chaque test OTDR doit être parfait.
-          Chez Fiberlink Technology, nous travaillons avec une logique “zéro surprise” :
-          conformité, traçabilité et performance mesurable.
+          chaque soudure, chaque test OTDR et chaque bilan optique doit être parfaitement maîtrisé.
+          Chez Fiberlink Technology, nous appliquons une logique “zéro surprise” : conformité,
+          traçabilité et performance mesurable.
         </p>
 
         <p>
-          Du backbone à la desserte, nous intervenons sur les projets FTTH / FTTO / FTTE,
-          en respectant les délais, les normes et les exigences opérateurs.
-          Notre force : une équipe réactive, outillée, et orientée qualité.
+          Avant chaque intervention, nous réalisons une <strong>visite chantier</strong> afin de valider
+          le parcours, l’environnement, les accès, les contraintes techniques, et surtout les règles
+          de sécurité. Cette étape garantit un déroulement fluide, sans improvisation, et permet
+          d’anticiper les points critiques.
+        </p>
+
+        <p>
+          Nous assurons ensuite le <strong>tirage de câble</strong> (aérien, souterrain, immeuble, local technique),
+          l’installation de tous types de boîtiers (PBO, PTO, BPI, tiroirs optiques, coffrets, armoires),
+          ainsi que les <strong>soudures</strong> avec une finition propre et durable.
+        </p>
+
+        <p>
+          En phase de recette, nous effectuons des <strong>mesures réflectométriques (OTDR)</strong>,
+          le traitement des courbes, la détection d’éventuelles pertes ou défauts,
+          puis la réalisation du <strong>bilan optique final</strong>.
+          Chaque lien est livré avec une qualité conforme aux standards opérateurs.
+        </p>
+
+        <p>
+          Enfin, la <strong>sécurité sur chantier</strong> reste une priorité absolue :
+          balisage, EPI, procédures, prévention des risques, respect des consignes et
+          comportement professionnel sur site.  
+          Chez Fiberlink Technology, un chantier réussi est un chantier <strong>propre, sécurisé et parfaitement livré</strong>.
         </p>
 
         <div class="chips">
-          <div class="chip"><span class="dot"></span>Déploiement FTTH</div>
-          <div class="chip"><span class="dot"></span>Raccordement abonnés</div>
-          <div class="chip"><span class="dot"></span>Soudure & mesures OTDR</div>
-          <div class="chip"><span class="dot"></span>Maintenance & SAV</div>
-          <div class="chip"><span class="dot"></span>Optimisation réseau</div>
-          <div class="chip"><span class="dot"></span>Intervention rapide</div>
+          <div class="chip"><span class="dot"></span>FTTH • FTTO • FTTE</div>
+          <div class="chip"><span class="dot"></span>Visite chantier</div>
+          <div class="chip"><span class="dot"></span>Tirage de câble</div>
+          <div class="chip"><span class="dot"></span>Boîtiers & tiroirs</div>
+          <div class="chip"><span class="dot"></span>Soudures haute qualité</div>
+          <div class="chip"><span class="dot"></span>OTDR • Courbes</div>
+          <div class="chip"><span class="dot"></span>Bilan optique final</div>
+          <div class="chip"><span class="dot"></span>Sécurité chantier</div>
         </div>
       </div>
 
       <!-- IMAGE À DROITE -->
       <div class="img-box">
-        <img src="assets/telecoms/telecoms.jpg" alt="Télécoms et opérateurs - Fibre optique" />
+        <img src="assets/telecoms" alt="Télécoms et opérateurs - Fibre optique" />
         <div class="img-overlay"></div>
         <div class="img-caption">
           Déploiement Télécoms haute précision
-          <span>Fibre optique • Backbone • Raccordement • Qualité opérateur</span>
+          <span>Backbone • Raccordement • Qualité opérateur • Livraison propre</span>
         </div>
       </div>
 
