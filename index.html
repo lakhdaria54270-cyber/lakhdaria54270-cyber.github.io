@@ -276,7 +276,16 @@
           </div>
         </div>
 
-        <a href="#">Secteur d’activité</a>
+        <!-- SECTEUR D’ACTIVITÉ -->
+        <div class="dropdown" id="dropSectors">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Secteur d’activité <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="Telecoms & Operateurs.html">Télécoms & Opérateurs</a>
+          </div>
+        </div>
+
         <a href="#">Nos réalisations</a>
       </nav>
     </div>
@@ -326,6 +335,8 @@
 <script>
   function initDropdown(id){
     const drop = document.getElementById(id);
+    if(!drop) return;
+
     const btn = drop.querySelector("button");
 
     btn.addEventListener("click", () => {
@@ -343,6 +354,7 @@
 
   initDropdown("dropAbout");
   initDropdown("dropServices");
+  initDropdown("dropSectors");
 </script>
 
 </body>
