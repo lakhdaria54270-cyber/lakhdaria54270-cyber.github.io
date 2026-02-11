@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Fiberlink Technology</title>
-  <meta name="description" content="Fiberlink Technology : fibre optique, réseaux, dépannage, maintenance et secteurs d’activité." />
+  <meta name="description" content="Fiberlink Technology — Solutions Fibre Optique & Réseaux." />
 
   <style>
     :root{
@@ -141,74 +141,68 @@
     .dropdown:hover .dropdown-menu{display:block}
     .dropdown.open .dropdown-menu{display:block}
 
-    main{padding:38px 0 70px}
+    main{padding:38px 0 60px}
 
-    /* ===== HERO ===== */
-    .hero{
-      border-radius:22px;
-      border:1px solid var(--line);
-      background:rgba(12,16,32,.55);
-      box-shadow:var(--shadow);
-      padding:28px;
-      overflow:hidden;
+    /* ===== HERO VIDEO (TAILLE ORIGINE) ===== */
+    .hero-video{
       position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+      background:#000;
     }
 
-    .hero h1{
-      margin:0 0 10px;
-      font-size:36px;
+    .hero-video video{
+      display:block;
+      width:auto;
+      height:auto;
+      max-width:100%;
+      max-height:520px;
+      margin:0 auto;
+      opacity:0.55;
+    }
+
+    .hero-overlay{
+      position:absolute;
+      inset:0;
+      display:flex;
+      align-items:flex-end;
+      justify-content:flex-start;
+      padding:26px;
+      z-index:2;
+      pointer-events:none;
+      background:linear-gradient(
+        to top,
+        rgba(7,10,18,.85),
+        rgba(7,10,18,.10)
+      );
+    }
+
+    .hero-box{max-width:720px}
+
+    .hero-title{
+      margin:0 0 8px;
+      font-size:44px;
       letter-spacing:-1px;
       line-height:1.05;
       font-weight:900;
+      color:var(--text);
     }
 
-    .hero p{
+    .hero-slogan{
       margin:0;
-      color:var(--muted);
-      line-height:1.7;
-      font-size:14px;
-      max-width:900px;
+      font-size:18px;
+      font-weight:800;
+      color:var(--green);
+      letter-spacing:.3px;
     }
 
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
-
-    .btn{
-      height:44px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:0 16px;
-      border-radius:16px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-weight:900;
-      font-size:13px;
-      transition:.2s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-2px);
-      border-color:rgba(53,255,122,.35);
-      background:rgba(255,255,255,.05);
-    }
-
-    .btn.primary{
-      border-color:rgba(53,255,122,.35);
-      background:rgba(53,255,122,.08);
-      color:var(--text);
-    }
-
-    .cards{
-      margin-top:16px;
+    .grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr);
-      gap:14px;
+      grid-template-columns:1.2fr .8fr;
+      gap:16px;
+      margin-top:18px;
     }
 
     .card{
@@ -216,35 +210,27 @@
       border:1px solid var(--line);
       background:rgba(12,16,32,.55);
       box-shadow:var(--shadow);
-      padding:18px;
-      min-height:140px;
-      transition:.25s ease;
-    }
-
-    .card:hover{
-      transform:translateY(-4px);
-      border-color:rgba(53,255,122,.35);
-      background:rgba(12,16,32,.75);
+      padding:22px;
     }
 
     .card h2{
-      margin:0 0 8px;
-      font-size:16px;
-      font-weight:900;
-      letter-spacing:-.4px;
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--text);
     }
 
     .card p{
       margin:0;
       color:var(--muted);
-      font-size:13px;
-      line-height:1.6;
+      line-height:1.7;
+      font-size:14px;
     }
 
     @media (max-width: 900px){
       .dropdown:hover .dropdown-menu{display:none}
-      .cards{grid-template-columns:1fr}
-      .hero h1{font-size:28px}
+      .hero-title{font-size:34px}
+      .hero-video video{max-height:340px}
+      .grid{grid-template-columns:1fr}
     }
   </style>
 </head>
@@ -290,7 +276,7 @@
           </div>
         </div>
 
-        <!-- IMPORTANT : SECTEUR = LIEN SIMPLE -->
+        <!-- ✅ SECTEUR D’ACTIVITÉ = PAS DE MENU DEROULANT -->
         <a href="secteurs.html">Secteur d’activité</a>
 
         <a href="#">Nos réalisations</a>
@@ -302,44 +288,38 @@
 <main>
   <div class="wrap">
 
-    <section class="hero">
-      <h1>Fibre optique & réseaux, avec une exécution propre.</h1>
-      <p>
-        Fiberlink Technology accompagne les opérateurs, entreprises, collectivités et sites sensibles
-        dans le déploiement, la maintenance et l’optimisation des infrastructures fibre et réseaux.
-        Une approche terrain, une exigence qualité, une livraison conforme.
-      </p>
+    <section class="hero-video">
+      <video autoplay muted loop playsinline>
+        <source src="assets/hero.mp4" type="video/mp4">
+      </video>
 
-      <div class="hero-actions">
-        <a class="btn primary" href="secteurs.html">Voir les secteurs</a>
-        <a class="btn" href="depannage.html">Dépannage</a>
-        <a class="btn" href="maintenance.html">Maintenance</a>
+      <div class="hero-overlay">
+        <div class="hero-box">
+          <h1 class="hero-title">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </h1>
+          <p class="hero-slogan">Think Fast, Link Smart</p>
+        </div>
       </div>
     </section>
 
-    <section class="cards">
-
-      <a class="card" href="depannage.html">
-        <h2>Dépannage</h2>
+    <section class="grid">
+      <div class="card">
+        <h2>Solutions Fibre Optique & Réseaux</h2>
         <p>
-          Diagnostic rapide, rétablissement, interventions terrain, mesures et remise en conformité.
+          Fiberlink Technology accompagne les entreprises et les projets d’infrastructure
+          avec une approche moderne : précision, performance et fiabilité.
         </p>
-      </a>
+      </div>
 
-      <a class="card" href="maintenance.html">
-        <h2>Maintenance</h2>
+      <div class="card">
+        <h2>Domaines</h2>
         <p>
-          Préventif, curatif, suivi, documentation, contrôle qualité et fiabilisation des liens.
+          FTTH • FTTO • FTTE • Réseaux • Maintenance • Déploiement
         </p>
-      </a>
-
-      <a class="card" href="secteurs.html">
-        <h2>Secteurs d’activité</h2>
-        <p>
-          Télécoms, entreprises, FTTH, RIP, industrie, tertiaire, data centers, IoT, réseaux privés.
-        </p>
-      </a>
-
+      </div>
     </section>
 
   </div>
