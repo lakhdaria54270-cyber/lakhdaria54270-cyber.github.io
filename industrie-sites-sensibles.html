@@ -1,1 +1,442 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Industrie & Sites sensibles — Fiberlink Technology</title>
+  <meta name="description" content="Industrie & sites sensibles : fibre optique sécurisée, interventions maîtrisées, raccordement, soudures, OTDR, bilan optique final et conformité." />
 
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:260px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .brand-sub{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .g{color:var(--green);font-weight:900}
+
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .menu > a,
+    .menu > .dropdown > button{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .menu > a:hover,
+    .menu > .dropdown > button:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* dropdown uniquement pour About + Services */
+    .dropdown{position:relative}
+    .caret{opacity:.75}
+
+    .dropdown-menu{
+      position:absolute;
+      top:46px;
+      left:0;
+      min-width:220px;
+      background:rgba(12,16,32,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:8px;
+      display:none;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .dropdown-menu a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.04);
+    }
+
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown.open .dropdown-menu{display:block}
+
+    main{padding:38px 0 70px}
+
+    .sector-hero{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
+      position:relative;
+    }
+
+    .sector-hero h1{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-1px;
+      line-height:1.05;
+      font-weight:900;
+    }
+
+    .sector-hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+      max-width:900px;
+    }
+
+    .sector-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:16px;
+      margin-top:16px;
+    }
+
+    .card{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .article h2{
+      margin:0 0 12px;
+      font-size:18px;
+      font-weight:900;
+      letter-spacing:-.3px;
+    }
+
+    .article p{
+      margin:0 0 14px;
+      color:var(--muted);
+      line-height:1.85;
+      font-size:14px;
+    }
+
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:16px;
+    }
+
+    .chip{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:12px;
+      font-weight:800;
+    }
+
+    .chip .dot{
+      display:inline-block;
+      width:8px;
+      height:8px;
+      border-radius:99px;
+      background:var(--green);
+      margin-right:8px;
+      box-shadow:0 0 20px rgba(53,255,122,.25);
+    }
+
+    .img-box{
+      position:relative;
+      overflow:hidden;
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:#000;
+      box-shadow:var(--shadow);
+      min-height:380px;
+    }
+
+    .img-box img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      opacity:.92;
+      transform:scale(1.02);
+    }
+
+    .img-overlay{
+      position:absolute;
+      inset:0;
+      background:linear-gradient(
+        to top,
+        rgba(7,10,18,.88),
+        rgba(7,10,18,.05)
+      );
+    }
+
+    .img-caption{
+      position:absolute;
+      left:18px;
+      right:18px;
+      bottom:16px;
+      color:var(--text);
+      font-size:13px;
+      font-weight:900;
+      letter-spacing:-.2px;
+    }
+
+    .img-caption span{
+      display:block;
+      margin-top:4px;
+      color:var(--muted);
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:0;
+    }
+
+    @media (max-width: 900px){
+      .dropdown:hover .dropdown-menu{display:none}
+      .sector-grid{grid-template-columns:1fr}
+      .sector-hero h1{font-size:28px}
+      .img-box{min-height:260px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu">
+
+        <div class="dropdown" id="dropAbout">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Nous connaître <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="histoire.html">Notre histoire</a>
+            <a href="partenaires.html">Nos partenaires</a>
+          </div>
+        </div>
+
+        <div class="dropdown" id="dropServices">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Service <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="depannage.html">Dépannage</a>
+            <a href="maintenance.html">Maintenance</a>
+          </div>
+        </div>
+
+        <a href="secteurs.html">Secteur d’activité</a>
+
+        <a href="#">Nos réalisations</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="sector-hero">
+      <h1>Industrie & Sites sensibles</h1>
+      <p>
+        Sur les sites industriels, la fibre ne se déploie pas “comme ailleurs”.
+        Les contraintes de sécurité, d’accès, de continuité de service et d’environnement
+        imposent une exécution irréprochable.
+        Fiberlink Technology intervient avec une méthode stricte, un haut niveau de finition,
+        et une priorité absolue : <strong>la sécurité</strong>.
+      </p>
+    </section>
+
+    <section class="sector-grid">
+
+      <!-- ARTICLE À GAUCHE -->
+      <div class="card article">
+        <h2>Une fibre robuste, propre, et adaptée aux environnements exigeants.</h2>
+
+        <p>
+          Industrie, logistique, sites sensibles, zones techniques… chaque chantier
+          demande une approche différente : gestion des circulations, autorisations,
+          contraintes de production, zones ATEX, locaux électriques, ou encore
+          accès sécurisés.
+        </p>
+
+        <p>
+          Nous commençons systématiquement par une <strong>visite chantier</strong> :
+          repérage du parcours, validation des supports, identification des risques,
+          organisation des zones d’intervention et des accès.
+          Cela permet une exécution rapide, propre, et sans improvisation.
+        </p>
+
+        <p>
+          Nos équipes réalisent ensuite le <strong>tirage de câble</strong> (chemins de câble,
+          goulottes, conduits, fourreaux, tranchées, zones techniques),
+          l’installation de <strong>tous types de boîtiers</strong> (tiroirs optiques,
+          coffrets, boîtiers de raccordement, PTO, etc.),
+          et les <strong>soudures</strong> avec une finition très soignée.
+        </p>
+
+        <p>
+          En phase de recette, nous effectuons des <strong>mesures réflectométriques (OTDR)</strong>,
+          le <strong>traitement des courbes</strong>, la recherche de défauts,
+          puis la remise du <strong>bilan optique final</strong>.
+          L’objectif : livrer une liaison fiable, stable et parfaitement documentée.
+        </p>
+
+        <p>
+          Sur tous les chantiers industriels, la <strong>sécurité</strong> n’est pas une option :
+          EPI, balisage, procédures, autorisations, prévention, respect des consignes
+          et comportement professionnel.
+          Chez Fiberlink Technology, un chantier réussi est un chantier
+          <strong>sécurisé, propre et durable</strong>.
+        </p>
+
+        <div class="chips">
+          <div class="chip"><span class="dot"></span>Sites sensibles</div>
+          <div class="chip"><span class="dot"></span>Visite chantier</div>
+          <div class="chip"><span class="dot"></span>Tirage câble</div>
+          <div class="chip"><span class="dot"></span>Boîtiers & tiroirs</div>
+          <div class="chip"><span class="dot"></span>Soudures haute qualité</div>
+          <div class="chip"><span class="dot"></span>OTDR • Courbes</div>
+          <div class="chip"><span class="dot"></span>Bilan optique final</div>
+          <div class="chip"><span class="dot"></span>Sécurité chantier</div>
+        </div>
+      </div>
+
+      <!-- IMAGE À DROITE -->
+      <div class="img-box">
+        <img src="assets/industrie.jpg" alt="Industrie et sites sensibles - Fibre optique" />
+        <div class="img-overlay"></div>
+        <div class="img-caption">
+          Industrie : précision & sécurité
+          <span>Réseaux techniques • Sites sensibles • Livraison propre</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<script>
+  function initDropdown(id){
+    const drop = document.getElementById(id);
+    if(!drop) return;
+
+    const btn = drop.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      const isOpen = drop.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if(!drop.contains(e.target)){
+        drop.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  initDropdown("dropAbout");
+  initDropdown("dropServices");
+</script>
+
+</body>
+</html>
