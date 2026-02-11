@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Télécoms & Opérateurs — Fiberlink Technology</title>
-  <meta name="description" content="Télécoms & Opérateurs — Déploiement fibre, backbone, raccordement, maintenance et performance réseau." />
+  <title>Secteurs d’activité — Fiberlink Technology</title>
+  <meta name="description" content="Découvrez les secteurs d’activité de Fiberlink Technology : Télécoms, FTTH, FTTO, RIP, Industrie, Tertiaire, Data Centers, Smart City, Réseaux privés." />
 
   <style>
     :root{
@@ -25,6 +25,7 @@
       color:var(--text);
       background:var(--bg);
     }
+
     a{color:inherit;text-decoration:none}
     .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
 
@@ -108,7 +109,7 @@
       background:rgba(255,255,255,.03);
     }
 
-    /* ===== DROPDOWN ===== */
+    /* ===== DROPDOWN (about + services uniquement) ===== */
     .dropdown{position:relative}
     .caret{opacity:.75}
 
@@ -116,7 +117,7 @@
       position:absolute;
       top:46px;
       left:0;
-      min-width:240px;
+      min-width:220px;
       background:rgba(12,16,32,.95);
       border:1px solid var(--line);
       border-radius:18px;
@@ -143,8 +144,8 @@
 
     main{padding:38px 0 70px}
 
-    /* ===== HERO SECTOR ===== */
-    .sector-hero{
+    /* ===== HERO ===== */
+    .hero{
       border-radius:22px;
       border:1px solid var(--line);
       background:rgba(12,16,32,.55);
@@ -154,7 +155,7 @@
       position:relative;
     }
 
-    .sector-hero h1{
+    .hero h1{
       margin:0 0 10px;
       font-size:34px;
       letter-spacing:-1px;
@@ -162,7 +163,7 @@
       font-weight:900;
     }
 
-    .sector-hero p{
+    .hero p{
       margin:0;
       color:var(--muted);
       line-height:1.7;
@@ -170,117 +171,100 @@
       max-width:900px;
     }
 
-    /* ===== ARTICLE LAYOUT ===== */
-    .sector-grid{
+    /* ===== GRID ===== */
+    .grid{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: repeat(3, 1fr);
       gap:16px;
       margin-top:16px;
     }
 
-    .card{
+    .sector-card{
       border-radius:22px;
       border:1px solid var(--line);
       background:rgba(12,16,32,.55);
       box-shadow:var(--shadow);
-      padding:22px;
-    }
-
-    .article h2{
-      margin:0 0 12px;
-      font-size:18px;
-      font-weight:900;
-      letter-spacing:-.3px;
-    }
-
-    .article p{
-      margin:0 0 14px;
-      color:var(--muted);
-      line-height:1.85;
-      font-size:14px;
-    }
-
-    .chips{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-top:16px;
-    }
-
-    .chip{
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      font-size:12px;
-      font-weight:800;
-    }
-
-    .chip .dot{
-      display:inline-block;
-      width:8px;
-      height:8px;
-      border-radius:99px;
-      background:var(--green);
-      margin-right:8px;
-      box-shadow:0 0 20px rgba(53,255,122,.25);
-    }
-
-    .img-box{
-      position:relative;
       overflow:hidden;
-      border-radius:22px;
-      border:1px solid var(--line);
-      background:#000;
-      box-shadow:var(--shadow);
-      min-height:380px;
+      position:relative;
+      transition:transform .18s ease, border-color .18s ease, background .18s ease;
+      min-height:210px;
     }
 
-    .img-box img{
+    .sector-card:hover{
+      transform:translateY(-3px);
+      border-color:rgba(53,255,122,.25);
+      background:rgba(12,16,32,.72);
+    }
+
+    .sector-img{
+      position:absolute;
+      inset:0;
+      overflow:hidden;
+    }
+
+    .sector-img img{
       width:100%;
       height:100%;
       object-fit:cover;
-      display:block;
-      opacity:.92;
-      transform:scale(1.02);
+      opacity:.55;
+      transform:scale(1.06);
     }
 
-    .img-overlay{
+    .sector-overlay{
       position:absolute;
       inset:0;
       background:linear-gradient(
         to top,
-        rgba(7,10,18,.88),
-        rgba(7,10,18,.05)
+        rgba(7,10,18,.92),
+        rgba(7,10,18,.25)
       );
     }
 
-    .img-caption{
-      position:absolute;
-      left:18px;
-      right:18px;
-      bottom:16px;
-      color:var(--text);
+    .sector-content{
+      position:relative;
+      z-index:2;
+      padding:18px;
+      height:100%;
+      display:flex;
+      flex-direction:column;
+      justify-content:flex-end;
+      gap:8px;
+    }
+
+    .sector-title{
+      margin:0;
+      font-size:16px;
+      font-weight:900;
+      letter-spacing:-.3px;
+      line-height:1.15;
+    }
+
+    .sector-desc{
+      margin:0;
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.55;
+    }
+
+    .sector-cta{
+      margin-top:10px;
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
       font-size:13px;
       font-weight:900;
-      letter-spacing:-.2px;
+      color:var(--green);
     }
 
-    .img-caption span{
-      display:block;
-      margin-top:4px;
-      color:var(--muted);
-      font-size:12px;
-      font-weight:700;
-      letter-spacing:0;
+    @media (max-width: 980px){
+      .grid{grid-template-columns: repeat(2, 1fr);}
     }
 
-    @media (max-width: 900px){
+    @media (max-width: 640px){
       .dropdown:hover .dropdown-menu{display:none}
-      .sector-grid{grid-template-columns:1fr}
-      .sector-hero h1{font-size:28px}
-      .img-box{min-height:260px}
+      .grid{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+      .sector-card{min-height:190px}
     }
   </style>
 </head>
@@ -326,16 +310,8 @@
           </div>
         </div>
 
-        <!-- SECTEUR D’ACTIVITÉ -->
-        <div class="dropdown" id="dropSectors">
-          <button type="button" aria-haspopup="true" aria-expanded="false">
-            Secteur d’activité <span class="caret">▾</span>
-          </button>
-          <div class="dropdown-menu" role="menu">
-            <a href="telecoms-operateurs.html">Télécoms & Opérateurs</a>
-            <a href="entreprises-ftto-ftte.html">Entreprises / FTTO - FTTE</a>
-          </div>
-        </div>
+        <!-- SECTEUR D’ACTIVITÉ (pas de dropdown) -->
+        <a href="secteurs.html">Secteur d’activité</a>
 
         <a href="#">Nos réalisations</a>
       </nav>
@@ -346,77 +322,151 @@
 <main>
   <div class="wrap">
 
-    <section class="sector-hero">
-      <h1>Télécoms & Opérateurs</h1>
+    <section class="hero">
+      <h1>Secteurs d’activité</h1>
       <p>
-        Dans un secteur où la performance n’est pas une option, Fiberlink Technology accompagne
-        les opérateurs, sous-traitants et acteurs télécoms dans le déploiement, l’optimisation
-        et la fiabilisation des infrastructures fibre.
-        Notre objectif : livrer une connectivité robuste, évolutive, et prête pour la montée en charge.
+        Fiberlink Technology intervient sur des projets fibre optique et réseaux à forte exigence :
+        déploiement, raccordement, soudures, mesures OTDR, analyse des courbes, bilan optique final
+        et livraison propre — avec une priorité absolue : la sécurité sur chantier.
       </p>
     </section>
 
-    <section class="sector-grid">
+    <section class="grid">
 
-      <!-- ARTICLE À GAUCHE -->
-      <div class="card article">
-        <h2>Une qualité opérateur. Une exécution chirurgicale.</h2>
-
-        <p>
-          Le monde télécom ne pardonne pas l’approximation : chaque raccordement, chaque jarretière,
-          chaque soudure, chaque test OTDR et chaque bilan optique doit être parfaitement maîtrisé.
-          Chez Fiberlink Technology, nous appliquons une logique “zéro surprise” : conformité,
-          traçabilité et performance mesurable.
-        </p>
-
-        <p>
-          Avant chaque intervention, nous réalisons une <strong>visite chantier</strong> afin de valider
-          le parcours, l’environnement, les accès, les contraintes techniques, et surtout les règles
-          de sécurité. Cette étape garantit un déroulement fluide, sans improvisation, et permet
-          d’anticiper les points critiques.
-        </p>
-
-        <p>
-          Nous assurons ensuite le <strong>tirage de câble</strong> (aérien, souterrain, immeuble, local technique),
-          l’installation de tous types de boîtiers (PBO, PTO, BPI, tiroirs optiques, coffrets, armoires),
-          ainsi que les <strong>soudures</strong> avec une finition propre et durable.
-        </p>
-
-        <p>
-          En phase de recette, nous effectuons des <strong>mesures réflectométriques (OTDR)</strong>,
-          le traitement des courbes, la détection d’éventuelles pertes ou défauts,
-          puis la réalisation du <strong>bilan optique final</strong>.
-          Chaque lien est livré avec une qualité conforme aux standards opérateurs.
-        </p>
-
-        <p>
-          Enfin, la <strong>sécurité sur chantier</strong> reste une priorité absolue :
-          balisage, EPI, procédures, prévention des risques, respect des consignes et
-          comportement professionnel sur site.  
-          Chez Fiberlink Technology, un chantier réussi est un chantier <strong>propre, sécurisé et parfaitement livré</strong>.
-        </p>
-
-        <div class="chips">
-          <div class="chip"><span class="dot"></span>FTTH • FTTO • FTTE</div>
-          <div class="chip"><span class="dot"></span>Visite chantier</div>
-          <div class="chip"><span class="dot"></span>Tirage de câble</div>
-          <div class="chip"><span class="dot"></span>Boîtiers & tiroirs</div>
-          <div class="chip"><span class="dot"></span>Soudures haute qualité</div>
-          <div class="chip"><span class="dot"></span>OTDR • Courbes</div>
-          <div class="chip"><span class="dot"></span>Bilan optique final</div>
-          <div class="chip"><span class="dot"></span>Sécurité chantier</div>
+      <!-- 1 -->
+      <a class="sector-card" href="telecoms-operateurs.html">
+        <div class="sector-img">
+          <img src="assets/telecoms.jpg" alt="Télécoms & Opérateurs" />
         </div>
-      </div>
-
-      <!-- IMAGE À DROITE -->
-      <div class="img-box">
-        <img src="assets/telecoms.jpg" alt="Télécoms et opérateurs - Fibre optique" />
-        <div class="img-overlay"></div>
-        <div class="img-caption">
-          Déploiement Télécoms haute précision
-          <span>Backbone • Raccordement • Qualité opérateur • Livraison propre</span>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Télécoms & Opérateurs</h2>
+          <p class="sector-desc">
+            Déploiement, maintenance, raccordements et conformité opérateur.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
         </div>
-      </div>
+      </a>
+
+      <!-- 2 -->
+      <a class="sector-card" href="entreprises-ftto-ftte.html">
+        <div class="sector-img">
+          <img src="assets/ftto.jpg" alt="Entreprises / FTTO - FTTE" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Entreprises / FTTO - FTTE</h2>
+          <p class="sector-desc">
+            Réseaux fibre dédiés, continuité de service et finition premium.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 3 -->
+      <a class="sector-card" href="residentiel-ftth.html">
+        <div class="sector-img">
+          <img src="assets/ftth.jpg" alt="Résidentiel / FTTH" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Résidentiel / FTTH</h2>
+          <p class="sector-desc">
+            Raccordements abonnés, PBO, PTO, tests et validation.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 4 -->
+      <a class="sector-card" href="reseaux-rip.html">
+        <div class="sector-img">
+          <img src="assets/rip.jpg" alt="Collectivités & Réseaux Publics (RIP)" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Collectivités & Réseaux Publics (RIP)</h2>
+          <p class="sector-desc">
+            Déploiement grande échelle, traçabilité, OTDR et conformité.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 5 -->
+      <a class="sector-card" href="industrie-sites-sensibles.html">
+        <div class="sector-img">
+          <img src="assets/industrie.jpg" alt="Industrie & Sites sensibles" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Industrie & Sites sensibles</h2>
+          <p class="sector-desc">
+            Sécurité renforcée, contraintes techniques, fiabilité et précision.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 6 -->
+      <a class="sector-card" href="tertiaire-bureaux-hotels-hopitaux.html">
+        <div class="sector-img">
+          <img src="assets/bureau.jpg" alt="Tertiaire (bureaux, hôtels, hôpitaux…)" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Tertiaire (bureaux, hôtels, hôpitaux…)</h2>
+          <p class="sector-desc">
+            Installations discrètes, propres, sans interruption d’activité.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 7 -->
+      <a class="sector-card" href="data-centers.html">
+        <div class="sector-img">
+          <img src="assets/datacenter.jpg" alt="Data Centers & Infrastructures critiques" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Data Centers & Infrastructures critiques</h2>
+          <p class="sector-desc">
+            Exigence maximale, mesure, bilan optique et documentation.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 8 -->
+      <a class="sector-card" href="smart-city-iot.html">
+        <div class="sector-img">
+          <img src="assets/iot.jpg" alt="Smart City & IoT" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Smart City & IoT</h2>
+          <p class="sector-desc">
+            Connectivité urbaine, réseaux hybrides, déploiement intelligent.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
+
+      <!-- 9 -->
+      <a class="sector-card" href="reseaux-prive-lan.html">
+        <div class="sector-img">
+          <img src="assets/reseauxprive.png" alt="Réseaux privés LAN/WAN multi-sites" />
+        </div>
+        <div class="sector-overlay"></div>
+        <div class="sector-content">
+          <h2 class="sector-title">Réseaux privés LAN/WAN multi-sites</h2>
+          <p class="sector-desc">
+            Interconnexion, backbone fibre, performance et supervision.
+          </p>
+          <span class="sector-cta">Découvrir →</span>
+        </div>
+      </a>
 
     </section>
 
@@ -445,7 +495,6 @@
 
   initDropdown("dropAbout");
   initDropdown("dropServices");
-  initDropdown("dropSectors");
 </script>
 
 </body>
