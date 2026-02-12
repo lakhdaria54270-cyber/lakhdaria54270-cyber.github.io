@@ -200,6 +200,7 @@
       position:absolute;
       inset:0;
       overflow:hidden;
+      pointer-events:none; /* ✅ IMPORTANT : empêche le blocage du clic */
     }
 
     .sector-img img{
@@ -218,6 +219,7 @@
         rgba(7,10,18,.92),
         rgba(7,10,18,.25)
       );
+      pointer-events:none; /* ✅ IMPORTANT : empêche le blocage du clic */
     }
 
     .sector-content{
