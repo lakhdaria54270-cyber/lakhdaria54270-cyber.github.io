@@ -1,1 +1,456 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact — Fiberlink Technology</title>
+  <meta name="description" content="Contactez Fiberlink Technology : Fibre optique, FTTH, FTTO, FTTE, maintenance, dépannage." />
 
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:260px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .brand-sub{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .g{color:var(--green);font-weight:900}
+
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .menu > a{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .menu > a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    main{padding:38px 0 60px}
+
+    /* HERO */
+    .hero{
+      border-radius:22px;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:0 24px 60px rgba(0,0,0,.45);
+      background:
+        radial-gradient(1200px 500px at 10% 10%, rgba(53,255,122,.10), transparent 55%),
+        radial-gradient(900px 500px at 90% 20%, rgba(167,139,250,.14), transparent 60%),
+        rgba(12,16,32,.55);
+      padding:26px;
+    }
+
+    .hero h1{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-.8px;
+      font-weight:1000;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.7;
+      font-size:14px;
+      max-width:820px;
+    }
+
+    /* GRID */
+    .grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      margin-top:16px;
+    }
+
+    .card{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .card h2{
+      margin:0 0 12px;
+      font-size:18px;
+      font-weight:1000;
+    }
+
+    .muted{color:var(--muted);line-height:1.7;font-size:14px;margin:0}
+
+    /* FORM */
+    form{margin-top:10px}
+    .row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+
+    label{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      font-weight:900;
+      margin:0 0 8px;
+    }
+
+    input, textarea, select{
+      width:100%;
+      border-radius:16px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      padding:12px 12px;
+      outline:none;
+      font-size:14px;
+      transition:.2s ease;
+    }
+
+    input:focus, textarea:focus, select:focus{
+      border-color:rgba(103,232,249,.35);
+      box-shadow:0 0 0 4px rgba(103,232,249,.08);
+    }
+
+    textarea{min-height:130px;resize:vertical}
+
+    /* BUTTONS */
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      height:46px;
+      padding:0 16px;
+      border-radius:16px;
+      font-weight:1000;
+      font-size:13px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      transition:.2s ease;
+      cursor:pointer;
+    }
+
+    .btn:hover{
+      transform:translateY(-1px);
+      border-color:rgba(255,255,255,.16);
+      background:rgba(255,255,255,.05);
+    }
+
+    .btn-primary{
+      border:none;
+      background:linear-gradient(135deg, rgba(103,232,249,.95), rgba(167,139,250,.95));
+      color:#061018;
+      box-shadow:0 18px 40px rgba(103,232,249,.14);
+    }
+
+    .btn-primary:hover{filter:brightness(1.05)}
+
+    .btn-line{
+      border:1px solid rgba(53,255,122,.18);
+      background:rgba(53,255,122,.06);
+      color:var(--text);
+    }
+
+    /* CONTACT ITEMS */
+    .contact-list{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .contact-item{
+      border-radius:18px;
+      border:1px solid rgba(255,255,255,.08);
+      background:rgba(255,255,255,.03);
+      padding:14px;
+    }
+
+    .contact-item strong{
+      display:block;
+      font-size:13px;
+      font-weight:1000;
+      margin-bottom:6px;
+    }
+
+    .contact-item span{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    /* CHIPS */
+    .chips{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-top:12px;
+    }
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-size:13px;
+      color:var(--muted);
+      font-weight:900;
+    }
+
+    .dot{
+      width:8px;height:8px;border-radius:99px;
+      background:var(--green);
+      box-shadow:0 0 18px rgba(53,255,122,.35);
+    }
+
+    .note{
+      margin-top:14px;
+      font-size:12px;
+      color:rgba(168,179,214,.85);
+      line-height:1.7;
+    }
+
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .row{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu">
+        <a href="index.html">Accueil</a>
+        <a href="nosexperts.html">Nos experts</a>
+        <a href="secteurs.html">Secteur</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <section class="hero">
+      <h1>Contactez Fiberlink Technology</h1>
+      <p>
+        Déploiement fibre optique, maintenance, dépannage, FTTH, FTTO, FTTE.
+        Nous répondons rapidement et nous vous orientons vers la meilleure solution.
+      </p>
+    </section>
+
+    <section class="grid">
+
+      <!-- FORMULAIRE -->
+      <div class="card">
+        <h2>Envoyer une demande</h2>
+        <p class="muted">
+          Remplissez ce formulaire et nous vous recontactons rapidement.
+        </p>
+
+        <form action="mailto:contact@fiberlinktechnology.fr" method="post" enctype="text/plain">
+          <div class="row" style="margin-top:14px;">
+            <div>
+              <label>Nom</label>
+              <input type="text" name="Nom" placeholder="Votre nom" required>
+            </div>
+            <div>
+              <label>Entreprise</label>
+              <input type="text" name="Entreprise" placeholder="Optionnel">
+            </div>
+          </div>
+
+          <div class="row" style="margin-top:12px;">
+            <div>
+              <label>Email</label>
+              <input type="email" name="Email" placeholder="ex: contact@exemple.com" required>
+            </div>
+            <div>
+              <label>Téléphone</label>
+              <input type="tel" name="Téléphone" placeholder="ex: 07 66 66 05 85">
+            </div>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Type de demande</label>
+            <select name="Demande">
+              <option>Déploiement fibre (FTTH)</option>
+              <option>Fibre entreprise (FTTO / FTTE)</option>
+              <option>Maintenance / SAV</option>
+              <option>Dépannage urgent</option>
+              <option>Mesures OTDR / recette</option>
+              <option>Formation technique</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div style="margin-top:12px;">
+            <label>Message</label>
+            <textarea name="Message" placeholder="Décrivez votre besoin..."></textarea>
+          </div>
+
+          <div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:14px;">
+            <button class="btn btn-primary" type="submit">Envoyer</button>
+            <a class="btn" href="tel:+33766660585">Appeler</a>
+            <a class="btn btn-line" href="mailto:contact@fiberlinktechnology.fr">Email direct</a>
+          </div>
+
+          <p class="note">
+            🔒 Vos informations restent strictement confidentielles.
+          </p>
+        </form>
+      </div>
+
+      <!-- INFOS -->
+      <div class="card">
+        <h2>Coordonnées</h2>
+        <p class="muted">
+          Vous pouvez nous contacter directement.
+        </p>
+
+        <div class="contact-list">
+          <div class="contact-item">
+            <strong>Email</strong>
+            <span>contact@fiberlinktechnology.fr</span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Téléphone</strong>
+            <span>+33 07 66 66 05 85</span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Disponibilité</strong>
+            <span>Lundi → Samedi • Intervention rapide selon urgence</span>
+          </div>
+
+          <div class="contact-item">
+            <strong>Services</strong>
+            <span>FTTH • FTTO • FTTE • OTDR • Maintenance • Dépannage • Formations</span>
+          </div>
+        </div>
+
+        <h2 style="margin-top:18px;">Zones d’interventions</h2>
+        <p class="muted">
+          Présence forte + déplacements possibles sur toute la France.
+        </p>
+
+        <div class="chips">
+          <div class="chip"><span class="dot"></span>Île-de-France</div>
+          <div class="chip"><span class="dot"></span>Grand Est</div>
+          <div class="chip"><span class="dot"></span>Hauts-de-France</div>
+          <div class="chip"><span class="dot"></span>Auvergne-Rhône-Alpes</div>
+          <div class="chip"><span class="dot"></span>Déplacements France entière</div>
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+</body>
+</html>
