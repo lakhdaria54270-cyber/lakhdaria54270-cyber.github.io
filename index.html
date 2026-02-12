@@ -153,7 +153,6 @@
       background:#000;
     }
 
-    /* ✅ vidéo plus lumineuse */
     .hero-video video{
       display:block;
       width:auto;
@@ -221,7 +220,6 @@
       background:#000;
     }
 
-    /* ✅ image même taille que la vidéo */
     .experts-img img{
       width:100%;
       display:block;
@@ -259,58 +257,6 @@
       font-size:14px;
     }
 
-    /* ===== BOUTONS ===== */
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      height:44px;
-      padding:0 14px;
-      border-radius:16px;
-      font-weight:900;
-      font-size:13px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      color:var(--text);
-      transition:.2s ease;
-    }
-
-    .btn:hover{
-      transform:translateY(-1px);
-      border-color:rgba(255,255,255,.16);
-      background:rgba(255,255,255,.05);
-    }
-
-    .btn-primary{
-      border:none;
-      background:linear-gradient(135deg, rgba(103,232,249,.95), rgba(167,139,250,.95));
-      color:#061018;
-      box-shadow:0 18px 40px rgba(103,232,249,.14);
-    }
-    .btn-primary:hover{
-      filter:brightness(1.05);
-    }
-
-    /* ===== CHIPS ===== */
-    .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:10px 12px;
-      border-radius:999px;
-      border:1px solid var(--line);
-      background:rgba(255,255,255,.03);
-      font-size:13px;
-      color:var(--muted);
-      font-weight:800;
-    }
-    .dot{
-      width:8px;height:8px;border-radius:99px;
-      background:var(--green);
-      box-shadow:0 0 18px rgba(53,255,122,.35);
-    }
-
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px){
       .dropdown:hover .dropdown-menu{display:none}
       .hero-title{font-size:34px}
@@ -362,9 +308,16 @@
           </div>
         </div>
 
+        <!-- IMPORTANT : Secteur reste SIMPLE -->
         <a href="secteurs.html">Secteur d’activité</a>
+
         <a href="#">Nos réalisations</a>
+
+        <!-- NOUVEAUX LIENS EN HAUT -->
+        <a href="formations.html">Formations</a>
+        <a href="zones.html">Zones d’intervention</a>
         <a href="contact.html">Nous contacter</a>
+
       </nav>
     </div>
   </div>
@@ -417,104 +370,6 @@
         <p>
           FTTH • FTTO • FTTE • Réseaux • Maintenance • Déploiement
         </p>
-      </div>
-    </section>
-
-    <!-- FORMATIONS -->
-    <section class="card" style="margin-top:18px;">
-      <h2>Formations</h2>
-      <p style="margin-bottom:14px;">
-        Nous proposons des formations techniques terrain (FTTH / FTTO / FTTE),
-        mesures OTDR, bonnes pratiques, qualité, conformité opérateur et méthodes professionnelles.
-      </p>
-
-      <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <a href="contact.html" class="btn btn-primary">
-          Demander une formation
-        </a>
-        <a href="mailto:contact@fiberlinktechnology.fr" class="btn">
-          contact@fiberlinktechnology.fr
-        </a>
-        <a href="tel:+33766660585" class="btn">
-          +33 07 66 66 05 85
-        </a>
-      </div>
-    </section>
-
-    <!-- NOUS CONTACTER -->
-    <section class="card" style="margin-top:18px;">
-      <h2>Nous contacter</h2>
-      <p style="margin-bottom:14px;">
-        Une question, un besoin urgent, un projet fibre ? Notre équipe vous répond rapidement.
-      </p>
-
-      <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <a href="contact.html" class="btn btn-primary">
-          Accéder à la page contact
-        </a>
-        <a href="mailto:contact@fiberlinktechnology.fr" class="btn">
-          Envoyer un email
-        </a>
-        <a href="tel:+33766660585" class="btn">
-          Appeler
-        </a>
-      </div>
-    </section>
-
-    <!-- TEMOIGNAGES -->
-    <section class="card" style="margin-top:18px;">
-      <h2>Témoignages</h2>
-      <p style="margin-bottom:14px;">
-        La satisfaction client est au cœur de notre engagement : qualité, propreté, conformité, sécurité.
-      </p>
-
-      <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:14px;">
-        <div style="border:1px solid var(--line); background:rgba(255,255,255,.03); border-radius:18px; padding:16px;">
-          <p style="margin:0; color:var(--text); font-weight:900;">★★★★★</p>
-          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13px;">
-            Travail très propre, mesures OTDR impeccables, livraison conforme opérateur.
-          </p>
-          <p style="margin:10px 0 0; font-size:12px; color:var(--muted); font-weight:800;">
-            — Client Télécom
-          </p>
-        </div>
-
-        <div style="border:1px solid var(--line); background:rgba(255,255,255,.03); border-radius:18px; padding:16px;">
-          <p style="margin:0; color:var(--text); font-weight:900;">★★★★★</p>
-          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13px;">
-            Intervention rapide, diagnostic précis, remise en service immédiate.
-          </p>
-          <p style="margin:10px 0 0; font-size:12px; color:var(--muted); font-weight:800;">
-            — Entreprise FTTO
-          </p>
-        </div>
-
-        <div style="border:1px solid var(--line); background:rgba(255,255,255,.03); border-radius:18px; padding:16px;">
-          <p style="margin:0; color:var(--text); font-weight:900;">★★★★★</p>
-          <p style="margin:10px 0 0; color:var(--muted); line-height:1.7; font-size:13px;">
-            Équipe sérieuse, respect sécurité chantier, finitions irréprochables.
-          </p>
-          <p style="margin:10px 0 0; font-size:12px; color:var(--muted); font-weight:800;">
-            — Collectivité / RIP
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ZONES D’INTERVENTIONS -->
-    <section class="card" style="margin-top:18px;">
-      <h2>Zones d’interventions</h2>
-      <p style="margin-bottom:14px;">
-        Nous intervenons sur l’ensemble du territoire selon les projets, avec une forte présence en :
-      </p>
-
-      <div style="display:flex; flex-wrap:wrap; gap:10px;">
-        <div class="chip"><span class="dot"></span>Île-de-France</div>
-        <div class="chip"><span class="dot"></span>Grand Est</div>
-        <div class="chip"><span class="dot"></span>Hauts-de-France</div>
-        <div class="chip"><span class="dot"></span>Auvergne-Rhône-Alpes</div>
-        <div class="chip"><span class="dot"></span>Bourgogne-Franche-Comté</div>
-        <div class="chip"><span class="dot"></span>Déplacements France entière</div>
       </div>
     </section>
 
