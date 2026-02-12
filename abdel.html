@@ -1,1 +1,602 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abdel — Expert Fibre Optique (FTTH / FTTO / FTTE) | Fiberlink Technology</title>
+  <meta name="description" content="Profil d’Abdel, technicien expert Fibre Optique & Télécoms (FTTH / FTTO / FTTE) avec plus de 15 ans d’expérience : raccordements, OTDR, bilans optiques, maintenance, conformité opérateur." />
 
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:260px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .brand-sub{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .g{color:var(--green);font-weight:900}
+
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .menu > a,
+    .menu > .dropdown > button{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .menu > a:hover,
+    .menu > .dropdown > button:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* ===== DROPDOWN (Nous connaître / Service seulement) ===== */
+    .dropdown{position:relative}
+    .caret{opacity:.75}
+
+    .dropdown-menu{
+      position:absolute;
+      top:46px;
+      left:0;
+      min-width:220px;
+      background:rgba(12,16,32,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:8px;
+      display:none;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .dropdown-menu a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.04);
+    }
+
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown.open .dropdown-menu{display:block}
+
+    main{padding:38px 0 70px}
+
+    /* ===== PAGE LAYOUT ===== */
+    .hero{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
+      position:relative;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-1px;
+      line-height:1.05;
+      font-weight:900;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
+      max-width:980px;
+    }
+
+    .hero .tagline{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-size:12px;
+      font-weight:900;
+      color:var(--text);
+    }
+
+    .pill .dot{
+      display:inline-block;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--green);
+      margin-right:8px;
+      box-shadow:0 0 20px rgba(53,255,122,.25);
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .card{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.4px;
+      font-weight:900;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .list{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .list li{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .list li b{color:var(--green)}
+
+    .photo{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      background:#000;
+      position:sticky;
+      top:92px;
+    }
+
+    .photo img{
+      width:100%;
+      display:block;
+      height:520px;
+      object-fit:cover;
+      opacity:.95;
+    }
+
+    .photo .caption{
+      padding:14px 16px;
+      border-top:1px solid var(--line);
+      background:rgba(12,16,32,.75);
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:18px;
+      color:var(--muted);
+      font-weight:900;
+      font-size:13px;
+    }
+    .back:hover{color:var(--text)}
+
+    @media (max-width: 980px){
+      .dropdown:hover .dropdown-menu{display:none}
+      .layout{grid-template-columns:1fr}
+      .photo{position:relative; top:auto}
+      .photo img{height:320px}
+      .grid2{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu">
+
+        <div class="dropdown" id="dropAbout">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Nous connaître <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="histoire.html">Notre histoire</a>
+            <a href="partenaires.html">Nos partenaires</a>
+          </div>
+        </div>
+
+        <div class="dropdown" id="dropServices">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Service <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="depannage.html">Dépannage</a>
+            <a href="maintenance.html">Maintenance</a>
+          </div>
+        </div>
+
+        <!-- IMPORTANT : Secteur d’activité est un lien simple -->
+        <a href="secteurs.html">Secteur d’activité</a>
+
+        <a href="#">Nos réalisations</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Abdel</h1>
+      <p>
+        <b style="color:var(--green)">Technicien Expert Fibre Optique & Télécoms</b> —
+        FTTH / FTTO / FTTE — <b style="color:var(--green)">+15 ans d’expérience</b>.
+        <br><br>
+        Avec plus de 15 années d’expérience terrain, Abdel est reconnu pour sa rigueur,
+        sa précision et sa capacité à intervenir sur des projets complexes avec un niveau
+        d’exigence élevé. Il maîtrise l’ensemble de la chaîne de déploiement, de maintenance
+        et de qualification des réseaux optiques, en environnement FTTH comme FTTO / FTTE.
+      </p>
+
+      <div class="tagline">
+        <span class="pill"><span class="dot"></span>+15 ans terrain</span>
+        <span class="pill"><span class="dot"></span>FTTH / FTTO / FTTE</span>
+        <span class="pill"><span class="dot"></span>OTDR & courbes</span>
+        <span class="pill"><span class="dot"></span>Bilans optiques</span>
+        <span class="pill"><span class="dot"></span>Conformité opérateur</span>
+      </div>
+
+      <a class="back" href="nosexperts.html">← Retour à Nos experts</a>
+    </section>
+
+    <!-- MAIN -->
+    <section class="layout">
+
+      <!-- TEXTE -->
+      <div>
+
+        <div class="card">
+          <h2>Un spécialiste complet : du terrain à la mesure, jusqu’à la validation finale</h2>
+          <p>
+            Abdel assure une prestation fiable, durable et conforme aux normes opérateurs.
+            Son savoir-faire lui permet de gérer un chantier fibre de bout en bout :
+            repérage, intervention, raccordement, mesures, analyse, mise en conformité,
+            et livrables techniques.
+          </p>
+
+          <ul class="list">
+            <li><b>Études terrain :</b> repérage, localisation, lecture de plans</li>
+            <li><b>Préparation :</b> organisation, sécurisation, matériel</li>
+            <li><b>Raccordements :</b> soudures, connectique, boîtiers</li>
+            <li><b>Mesures & recettes :</b> OTDR, photométrie, validation</li>
+            <li><b>Analyse :</b> défauts, pertes, événements</li>
+            <li><b>Conformité :</b> levée de réserves, reprise après refus recette</li>
+            <li><b>Livrables :</b> dossiers techniques, comptes-rendus</li>
+          </ul>
+        </div>
+
+        <div class="grid2">
+
+          <div class="card">
+            <h2>FTTH — Réseaux grand public</h2>
+            <p>
+              Abdel intervient sur l’ensemble des opérations FTTH, avec un haut niveau de propreté,
+              de précision et de respect des standards opérateurs.
+            </p>
+
+            <ul class="list">
+              <li><b>Raccordement abonnés :</b> PTO, jarretières, raccordement PBO</li>
+              <li><b>Intervention PM / PBO :</b> aérien & souterrain</li>
+              <li><b>Tirage & passage :</b> conduites, chambres télécom, aiguillage</li>
+              <li><b>Réserves :</b> respect rayons de courbure, organisation</li>
+              <li><b>SAV / dépannage :</b> reprises, soudures, incidents</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>FTTO / FTTE — Entreprises & sites complexes</h2>
+            <p>
+              Abdel maîtrise les environnements professionnels exigeants : réseaux multi-sites,
+              bâtiments tertiaires, industriels et infrastructures critiques.
+            </p>
+
+            <ul class="list">
+              <li><b>Réseaux multi-sites :</b> distribution, backbone, interconnexions</li>
+              <li><b>Liaisons dédiées :</b> déploiement FTTO / FTTE</li>
+              <li><b>Armoires optiques :</b> tiroirs, ODF, baies</li>
+              <li><b>Organisation :</b> repérage, propreté, durabilité</li>
+              <li><b>Sites sensibles :</b> rigueur, accès, continuité de service</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Mesures réflectométriques (OTDR) — Analyse & traitement de courbes</h2>
+          <p>
+            L’un des grands points forts d’Abdel est sa maîtrise avancée des mesures fibre et de la
+            qualification réseau. Il est capable de produire un diagnostic rapide et fiable, puis de
+            proposer des actions correctives efficaces.
+          </p>
+
+          <ul class="list">
+            <li><b>Mesures OTDR :</b> réflectométrie, événements, distances</li>
+            <li><b>Photométrie :</b> PM / source, validation d’atténuation</li>
+            <li><b>Analyse :</b> pertes, soudures, connecteurs, événements</li>
+            <li><b>Traitement :</b> courbes OTDR (nettoyage, lecture, conformité)</li>
+            <li><b>Détection défauts :</b> macro/micro-courbure, écrasement, rupture partielle</li>
+            <li><b>Interprétation :</b> standards opérateurs & seuils d’acceptation</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Réalisation de bilans optiques complets</h2>
+          <p>
+            Abdel réalise des bilans optiques détaillés en prenant en compte tous les paramètres :
+            longueur, type de fibre, soudures, connecteurs, atténuation réelle/théorique, marges,
+            et conformité client/opérateur.
+          </p>
+
+          <ul class="list">
+            <li><b>Type de fibre :</b> G652D, G657…</li>
+            <li><b>Soudures :</b> quantité, pertes, validation</li>
+            <li><b>Connecteurs :</b> jarretières, tiroirs, événements</li>
+            <li><b>Atténuation :</b> théorique vs réelle</li>
+            <li><b>Marges :</b> sécurité et validation finale</li>
+            <li><b>Conformité :</b> exigences opérateurs / clients</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Pose & raccordement de tous types de boîtiers fibre</h2>
+          <p>
+            Abdel maîtrise la pose, la préparation et l’organisation de tous types de boîtiers optiques,
+            en aérien comme en souterrain. Il est particulièrement reconnu pour son travail propre,
+            durable et conforme.
+          </p>
+
+          <ul class="list">
+            <li><b>PBO :</b> point de branchement optique</li>
+            <li><b>PM :</b> point de mutualisation</li>
+            <li><b>BPE :</b> boîtiers d’épissurage</li>
+            <li><b>Boîtiers dérivation :</b> intérieur / extérieur</li>
+            <li><b>Boîtiers étanches :</b> chambres, poteaux, extérieur</li>
+            <li><b>Tiroirs / ODF :</b> baies, armoires, cassettes</li>
+            <li><b>Organisation :</b> protection soudures, repérage clair</li>
+          </ul>
+        </div>
+
+        <div class="grid2">
+
+          <div class="card">
+            <h2>Compétences techniques avancées</h2>
+            <ul class="list">
+              <li><b>Soudures fusion :</b> soudeuse, clivage, préparation fibre</li>
+              <li><b>Inspection :</b> nettoyage, contrôle connecteurs</li>
+              <li><b>Connectique :</b> pigtails, jarretières, coupleurs</li>
+              <li><b>Mono / multimode :</b> adaptation selon réseau</li>
+              <li><b>Contraintes mécaniques :</b> traction, rayons de courbure</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Qualité, conformité & sécurité chantier</h2>
+            <p>
+              Abdel est très orienté qualité. Il respecte strictement les normes opérateurs,
+              sécurise ses zones d’intervention, et garantit un rendu final propre et durable.
+            </p>
+
+            <ul class="list">
+              <li><b>Contrôle qualité :</b> raccordements, soudures, connectique</li>
+              <li><b>Conformité :</b> standards opérateurs</li>
+              <li><b>Audit / refus recette :</b> reprise, mise en conformité</li>
+              <li><b>Levée de réserves :</b> rigueur & efficacité</li>
+              <li><b>QHSE :</b> sécurité chantier, balisage, procédures</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Un technicien fiable, autonome et orienté résultat</h2>
+          <p>
+            Au-delà de ses compétences techniques, Abdel est reconnu pour son sérieux,
+            sa discipline, sa capacité à travailler en autonomie, et sa rapidité de diagnostic.
+            Il sait s’intégrer sur des chantiers multi-intervenants et travailler en coordination
+            avec toutes les équipes terrain et projets.
+          </p>
+
+          <ul class="list">
+            <li><b>Autonomie :</b> gestion complète des missions</li>
+            <li><b>Analyse :</b> diagnostic rapide & fiable</li>
+            <li><b>Communication :</b> coordination équipes & responsables</li>
+            <li><b>Respect délais :</b> efficacité & organisation</li>
+            <li><b>Professionnalisme :</b> relation client & site sensible</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Conclusion</h2>
+          <p>
+            Abdel est un technicien expert fibre optique et télécoms, avec une maîtrise complète des
+            réseaux FTTH, FTTO et FTTE. Il gère aussi bien le raccordement terrain que la mesure,
+            l’analyse OTDR, le traitement de courbes et la réalisation de bilans optiques.
+            <br><br>
+            Avec plus de <b style="color:var(--green)">15 ans d’expérience</b>, il représente un profil hautement qualifié,
+            idéal pour des missions exigeantes, des réseaux sensibles, ou des projets nécessitant
+            un haut niveau de fiabilité et de qualité.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- IMAGE DROITE -->
+      <aside class="photo">
+        <!-- Tu peux remplacer par une vraie photo : assets/abdel.jpg -->
+        <img src="assets/maintenance.jpg" alt="Abdel — Expert fibre optique Fiberlink Technology">
+        <div class="caption">
+          Photo illustrative. (Tu peux ajouter une vraie photo plus tard : <b>assets/abdel.jpg</b>)
+        </div>
+      </aside>
+
+    </section>
+
+  </div>
+</main>
+
+<script>
+  function initDropdown(id){
+    const drop = document.getElementById(id);
+    if(!drop) return;
+
+    const btn = drop.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      const isOpen = drop.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if(!drop.contains(e.target)){
+        drop.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  initDropdown("dropAbout");
+  initDropdown("dropServices");
+</script>
+
+</body>
+</html>
