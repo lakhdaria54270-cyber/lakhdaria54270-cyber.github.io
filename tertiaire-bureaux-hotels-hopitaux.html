@@ -322,6 +322,7 @@
           </div>
         </div>
 
+        <!-- IMPORTANT : lien simple, pas de dropdown -->
         <a href="secteurs.html">Secteur d’activité</a>
 
         <a href="#">Nos réalisations</a>
@@ -346,3 +347,96 @@
 
       <!-- ARTICLE À GAUCHE -->
       <div class="card article">
+        <h2>La fibre dans des environnements occupés : précision + discrétion.</h2>
+
+        <p>
+          Dans un bureau, un hôtel ou un hôpital, on ne peut pas “juste tirer une fibre”.
+          Il faut travailler proprement, vite, sans perturber l’activité,
+          tout en garantissant une performance parfaite et une installation durable.
+        </p>
+
+        <p>
+          Chez <strong>Fiberlink Technology</strong>, nous commençons toujours par une
+          <strong>visite chantier</strong> : repérage des locaux techniques,
+          des cheminements, des zones sensibles, et validation du mode opératoire.
+        </p>
+
+        <p>
+          Nous réalisons ensuite le <strong>tirage de câble</strong> (gaine, chemin de câble,
+          faux plafonds, colonnes techniques), puis l’installation de tous types
+          de boîtiers : <strong>tiroirs optiques</strong>, coffrets, boîtiers d’étage,
+          boîtiers de dérivation, PTO, jarretières et brassage.
+        </p>
+
+        <p>
+          Les <strong>soudures</strong> sont effectuées avec une exigence élevée :
+          propreté, rangement, étiquetage, respect du rayon de courbure,
+          et finition “zéro câble qui traîne”.
+        </p>
+
+        <p>
+          Enfin, chaque liaison est validée par <strong>mesure OTDR</strong>,
+          <strong>traitement des courbes</strong>, et remise d’un
+          <strong>bilan optique final</strong>.
+          Le résultat : un réseau stable, documenté, prêt à l’exploitation.
+        </p>
+
+        <p>
+          La <strong>sécurité chantier</strong> est une priorité :
+          balisage, EPI, prévention, et respect strict des consignes internes,
+          surtout en environnement médical ou public.
+        </p>
+
+        <div class="chips">
+          <div class="chip"><span class="dot"></span>Bureaux</div>
+          <div class="chip"><span class="dot"></span>Hôtels</div>
+          <div class="chip"><span class="dot"></span>Hôpitaux</div>
+          <div class="chip"><span class="dot"></span>Boîtiers & tiroirs</div>
+          <div class="chip"><span class="dot"></span>Soudures</div>
+          <div class="chip"><span class="dot"></span>OTDR</div>
+          <div class="chip"><span class="dot"></span>Bilan optique final</div>
+          <div class="chip"><span class="dot"></span>Sécurité chantier</div>
+        </div>
+      </div>
+
+      <!-- IMAGE À DROITE -->
+      <div class="img-box">
+        <img src="assets/bureau.jpg" alt="Tertiaire : bureaux, hôtels, hôpitaux - Fibre optique" />
+        <div class="img-overlay"></div>
+        <div class="img-caption">
+          Fibre optique en environnement tertiaire
+          <span>Installation propre • Discrétion • Performance • Validation OTDR</span>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+</main>
+
+<script>
+  function initDropdown(id){
+    const drop = document.getElementById(id);
+    if(!drop) return;
+
+    const btn = drop.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      const isOpen = drop.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if(!drop.contains(e.target)){
+        drop.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  initDropdown("dropAbout");
+  initDropdown("dropServices");
+</script>
+
+</body>
+</html>
