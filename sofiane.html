@@ -1,1 +1,608 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sofiane — Expert Fibre Optique (FTTH / FTTO / FTTE) | Fiberlink Technology</title>
+  <meta name="description" content="Profil de Sofiane, technicien spécialiste Fibre Optique & Télécoms (FTTH / FTTO / FTTE) avec plus de 8 ans d’expérience : raccordements, OTDR, bilans optiques, maintenance et dépannage." />
 
+  <style>
+    :root{
+      --bg:#070A12;
+      --panel:#0C1020;
+      --text:#EAF0FF;
+      --muted:#A8B3D6;
+      --line:rgba(255,255,255,.08);
+      --shadow:0 24px 60px rgba(0,0,0,.45);
+      --r:22px;
+      --green:#35ff7a;
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+      color:var(--text);
+      background:var(--bg);
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:1100px;margin:0 auto;padding:0 18px}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      backdrop-filter:blur(14px);
+      background:rgba(7,10,18,.65);
+      border-bottom:1px solid var(--line);
+    }
+
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:14px 0;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      min-width:260px;
+    }
+
+    .logo{
+      width:40px;
+      height:40px;
+      border-radius:14px;
+      background:linear-gradient(135deg, rgba(125,211,252,1), rgba(167,139,250,1));
+      box-shadow:0 18px 40px rgba(125,211,252,.15);
+      flex:0 0 auto;
+    }
+
+    .brand-name{
+      font-size:14px;
+      font-weight:800;
+      line-height:1.1;
+      margin:0;
+    }
+
+    .brand-sub{
+      display:block;
+      font-size:12px;
+      color:var(--muted);
+      margin-top:2px;
+    }
+
+    .g{color:var(--green);font-weight:900}
+
+    .menu{
+      display:flex;
+      gap:10px;
+      align-items:center;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+
+    .menu > a,
+    .menu > .dropdown > button{
+      height:42px;
+      display:flex;
+      align-items:center;
+      gap:8px;
+      font-size:13px;
+      color:var(--muted);
+      padding:0 12px;
+      border-radius:14px;
+      border:1px solid transparent;
+      background:transparent;
+      cursor:pointer;
+      line-height:1;
+    }
+
+    .menu > a:hover,
+    .menu > .dropdown > button:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* ===== DROPDOWN ===== */
+    .dropdown{position:relative}
+    .caret{opacity:.75}
+
+    .dropdown-menu{
+      position:absolute;
+      top:46px;
+      left:0;
+      min-width:220px;
+      background:rgba(12,16,32,.95);
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:var(--shadow);
+      padding:8px;
+      display:none;
+    }
+
+    .dropdown-menu a{
+      display:block;
+      padding:12px 12px;
+      border-radius:14px;
+      color:var(--muted);
+      font-size:13px;
+    }
+
+    .dropdown-menu a:hover{
+      color:var(--text);
+      background:rgba(255,255,255,.04);
+    }
+
+    .dropdown:hover .dropdown-menu{display:block}
+    .dropdown.open .dropdown-menu{display:block}
+
+    main{padding:38px 0 70px}
+
+    /* ===== PAGE LAYOUT ===== */
+    .hero{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:26px;
+      overflow:hidden;
+      position:relative;
+      margin-bottom:16px;
+    }
+
+    .hero h1{
+      margin:0 0 10px;
+      font-size:34px;
+      letter-spacing:-1px;
+      line-height:1.05;
+      font-weight:900;
+    }
+
+    .hero p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:14px;
+      max-width:980px;
+    }
+
+    .hero .tagline{
+      margin-top:12px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+
+    .pill{
+      padding:10px 12px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      font-size:12px;
+      font-weight:900;
+      color:var(--text);
+    }
+
+    .pill .dot{
+      display:inline-block;
+      width:8px;
+      height:8px;
+      border-radius:999px;
+      background:var(--green);
+      margin-right:8px;
+      box-shadow:0 0 20px rgba(53,255,122,.25);
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+      align-items:start;
+    }
+
+    .card{
+      border-radius:22px;
+      border:1px solid var(--line);
+      background:rgba(12,16,32,.55);
+      box-shadow:var(--shadow);
+      padding:22px;
+    }
+
+    .card h2{
+      margin:0 0 10px;
+      font-size:18px;
+      letter-spacing:-.4px;
+      font-weight:900;
+    }
+
+    .card p{
+      margin:0;
+      color:var(--muted);
+      line-height:1.9;
+      font-size:14px;
+    }
+
+    .list{
+      margin:12px 0 0;
+      padding:0;
+      list-style:none;
+      display:grid;
+      gap:10px;
+    }
+
+    .list li{
+      padding:12px 14px;
+      border-radius:16px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--text);
+      font-size:13px;
+      line-height:1.6;
+    }
+
+    .list li b{color:var(--green)}
+
+    .photo{
+      border-radius:22px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.08);
+      box-shadow:var(--shadow);
+      background:#000;
+      position:sticky;
+      top:92px;
+    }
+
+    .photo img{
+      width:100%;
+      display:block;
+      height:520px;
+      object-fit:cover;
+      opacity:.95;
+    }
+
+    .photo .caption{
+      padding:14px 16px;
+      border-top:1px solid var(--line);
+      background:rgba(12,16,32,.75);
+      color:var(--muted);
+      font-size:12px;
+      line-height:1.6;
+    }
+
+    .grid2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+      margin-top:16px;
+    }
+
+    .back{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      margin-top:18px;
+      color:var(--muted);
+      font-weight:900;
+      font-size:13px;
+    }
+    .back:hover{color:var(--text)}
+
+    @media (max-width: 980px){
+      .dropdown:hover .dropdown-menu{display:none}
+      .layout{grid-template-columns:1fr}
+      .photo{position:relative; top:auto}
+      .photo img{height:320px}
+      .grid2{grid-template-columns:1fr}
+      .hero h1{font-size:28px}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="nav">
+      <a class="brand" href="index.html">
+        <div class="logo" aria-hidden="true"></div>
+        <div>
+          <div class="brand-name">
+            <span class="g">F</span>iber
+            <span class="g">L</span>ink
+            <span class="g">T</span>echnology
+          </div>
+          <span class="brand-sub">Réseaux • Fibre optique • Technologies</span>
+        </div>
+      </a>
+
+      <nav class="menu" aria-label="Menu">
+
+        <div class="dropdown" id="dropAbout">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Nous connaître <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="histoire.html">Notre histoire</a>
+            <a href="partenaires.html">Nos partenaires</a>
+          </div>
+        </div>
+
+        <div class="dropdown" id="dropServices">
+          <button type="button" aria-haspopup="true" aria-expanded="false">
+            Service <span class="caret">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a href="depannage.html">Dépannage</a>
+            <a href="maintenance.html">Maintenance</a>
+          </div>
+        </div>
+
+        <a href="secteurs.html">Secteur d’activité</a>
+        <a href="#">Nos réalisations</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+
+    <!-- HERO -->
+    <section class="hero">
+      <h1>Sofiane</h1>
+      <p>
+        <b style="color:var(--green)">Technicien Spécialiste Fibre Optique & Télécoms</b> —
+        FTTH / FTTO / FTTE — <b style="color:var(--green)">+8 ans d’expérience</b>.
+        <br><br>
+        Sofiane est un technicien qualifié, rigoureux et polyvalent, capable d’intervenir sur l’ensemble
+        des missions liées au déploiement, au raccordement, à la maintenance et à la recette des
+        infrastructures optiques. Son expertise couvre aussi bien le FTTH (grand public) que les
+        solutions FTTO / FTTE (entreprises, sites tertiaires, industriels et sensibles).
+      </p>
+
+      <div class="tagline">
+        <span class="pill"><span class="dot"></span>FTTH / FTTO / FTTE</span>
+        <span class="pill"><span class="dot"></span>OTDR & courbes</span>
+        <span class="pill"><span class="dot"></span>Bilans optiques</span>
+        <span class="pill"><span class="dot"></span>Maintenance & dépannage</span>
+        <span class="pill"><span class="dot"></span>Qualité & conformité opérateur</span>
+      </div>
+
+      <a class="back" href="nosexperts.html">← Retour à Nos experts</a>
+    </section>
+
+    <!-- MAIN LAYOUT -->
+    <section class="layout">
+
+      <!-- ARTICLE -->
+      <div>
+
+        <div class="card">
+          <h2>Maîtrise complète des réseaux FTTH / FTTO / FTTE</h2>
+          <p>
+            Grâce à une solide expérience terrain et une excellente maîtrise des outils de mesure,
+            Sofiane est reconnu pour la qualité de ses interventions, son sens de l’organisation
+            et sa capacité à résoudre rapidement les incidents fibre.
+          </p>
+        </div>
+
+        <div class="grid2">
+
+          <div class="card">
+            <h2>FTTH — Déploiement & raccordement abonnés</h2>
+            <p>
+              Sofiane intervient avec efficacité sur toutes les opérations FTTH, en appliquant
+              systématiquement les bonnes pratiques : respect des rayons de courbure, propreté
+              des connecteurs, organisation des fibres et sécurité chantier.
+            </p>
+
+            <ul class="list">
+              <li><b>Raccordement client :</b> PTO, jarretières, DTIo</li>
+              <li><b>Interventions PBO :</b> aérien / façade / chambre</li>
+              <li><b>Reprises en PM :</b> raccordements, corrections, conformité</li>
+              <li><b>Tirage de câble :</b> passage en conduites, aiguillage</li>
+              <li><b>Mise en service :</b> tests, validation et SAV</li>
+              <li><b>Maintenance :</b> pannes, pertes, coupures, micro-coupures</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>FTTO / FTTE — Fibre entreprise & liaisons dédiées</h2>
+            <p>
+              Sofiane possède une excellente expérience dans les environnements professionnels
+              (bureaux, sites industriels, établissements sensibles), en respectant les contraintes
+              d’accès, de sécurité et de continuité de service.
+            </p>
+
+            <ul class="list">
+              <li><b>Liaisons optiques dédiées :</b> entreprise / backbone</li>
+              <li><b>Réseaux internes :</b> distribution optique bâtiment</li>
+              <li><b>Tiroirs / ODF :</b> pose, raccordement, organisation</li>
+              <li><b>Baies de brassage :</b> propreté, repérage, rangement</li>
+              <li><b>Interconnexion multi-sites :</b> LAN/WAN, distribution</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Mesures fibre & réflectométrie OTDR</h2>
+          <p>
+            Sofiane réalise les mesures optiques et la qualification des liens avec une approche
+            précise et fiable, en conformité avec les seuils opérateurs. Son expertise OTDR
+            lui permet d’identifier rapidement un défaut et d’intervenir de manière ciblée.
+          </p>
+
+          <ul class="list">
+            <li><b>Mesures OTDR :</b> réflectométrie, événements, distances</li>
+            <li><b>Photométrie :</b> source + power meter, validation de pertes</li>
+            <li><b>Analyse :</b> soudures, connecteurs, défauts, ruptures partielles</li>
+            <li><b>Détection :</b> macro-courbures, connecteur sale, mauvaise soudure</li>
+            <li><b>Conformité :</b> contrôle selon seuils opérateurs</li>
+          </ul>
+        </div>
+
+        <div class="grid2">
+
+          <div class="card">
+            <h2>Traitement des courbes & diagnostic</h2>
+            <p>
+              Son approche est méthodique : il identifie l’origine d’un problème rapidement,
+              traite les courbes OTDR, valide les événements, et propose une solution corrective
+              claire et efficace.
+            </p>
+
+            <ul class="list">
+              <li><b>Traitement complet :</b> courbes OTDR</li>
+              <li><b>Analyse :</b> pertes & événements</li>
+              <li><b>Validation :</b> soudures et connectiques</li>
+              <li><b>Localisation :</b> distance exacte du défaut</li>
+              <li><b>Rapports :</b> livrables de mesure</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Réalisation de bilans optiques</h2>
+            <p>
+              Sofiane réalise des bilans optiques complets et adaptés selon le type de réseau :
+              FTTH, FTTO ou FTTE. Il vérifie les marges, compare l’atténuation théorique
+              et réelle, et prépare les résultats pour recette client/opérateur.
+            </p>
+
+            <ul class="list">
+              <li><b>Calcul atténuation :</b> théorique + réelle</li>
+              <li><b>Prise en compte :</b> soudures + connecteurs</li>
+              <li><b>Marges :</b> estimation et validation</li>
+              <li><b>Seuils :</b> conformité recette opérateur</li>
+              <li><b>Préparation :</b> résultats de recette</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Pose & raccordement de tous types de boîtiers fibre</h2>
+          <p>
+            Sofiane maîtrise la pose, l’organisation et le raccordement de tous types d’équipements
+            fibre. Il est apprécié pour la qualité de son travail : fibres bien rangées, soudures propres,
+            repérage clair et installation durable.
+          </p>
+
+          <ul class="list">
+            <li><b>PBO :</b> point de branchement optique</li>
+            <li><b>PM :</b> point de mutualisation</li>
+            <li><b>Boîtiers :</b> épissurage / dérivation</li>
+            <li><b>Boîtiers étanches :</b> extérieur, chambres, poteaux</li>
+            <li><b>Tiroirs optiques :</b> ODF, armoires, cassettes</li>
+            <li><b>Protection :</b> soudures, rangement fibre, repérage</li>
+          </ul>
+        </div>
+
+        <div class="grid2">
+
+          <div class="card">
+            <h2>Compétences techniques complémentaires</h2>
+            <ul class="list">
+              <li><b>Soudure fusion :</b> soudeuse, clivage, nettoyage</li>
+              <li><b>Connectique :</b> jarretières, pigtails, coupleurs</li>
+              <li><b>Inspection :</b> propreté connecteurs, défauts</li>
+              <li><b>Mono-mode / multi-mode :</b> gestion et adaptation</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h2>Travaux terrain & sécurité chantier</h2>
+            <p>
+              La sécurité sur chantier est une priorité. Sofiane sécurise systématiquement ses zones
+              d’intervention et applique les règles QHSE.
+            </p>
+            <ul class="list">
+              <li><b>Tirage câble :</b> aiguillage, conduites, chambres télécom</li>
+              <li><b>Aérien :</b> poteaux, façade, fixations, lovage</li>
+              <li><b>Repérage :</b> sécurisation, balisage, accès</li>
+              <li><b>QHSE :</b> respect strict des procédures</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Qualités professionnelles</h2>
+          <p>
+            Sofiane se distingue par son autonomie, sa rigueur technique, son sens du détail
+            et sa capacité à gérer les urgences. Il s’adapte facilement à différents chantiers,
+            équipes et environnements, tout en respectant les délais et les objectifs.
+          </p>
+
+          <ul class="list">
+            <li><b>Autonomie</b> • sérieux • rigueur</li>
+            <li><b>Esprit d’équipe</b> • relationnel professionnel</li>
+            <li><b>Gestion du stress</b> • efficacité en urgence</li>
+            <li><b>Qualité</b> • conformité opérateur • levée de réserves</li>
+          </ul>
+        </div>
+
+        <div class="card" style="margin-top:16px">
+          <h2>Conclusion</h2>
+          <p>
+            Sofiane est un technicien fibre optique et télécoms complet, avec plus de 8 ans
+            d’expérience, maîtrisant le FTTH comme les réseaux entreprise FTTO/FTTE.
+            <br><br>
+            Il combine parfaitement :
+            <b style="color:var(--green)">
+              compétences terrain • raccordement & boîtiers • OTDR • traitement de courbes • bilans optiques • maintenance & dépannage
+            </b>.
+            <br><br>
+            Un profil fiable, hautement opérationnel, idéal pour des projets fibre exigeants
+            et orientés qualité.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- PHOTO DROITE -->
+      <aside class="photo">
+        <!-- Tu peux remplacer cette image plus tard -->
+        <img src="assets/maintenance.jpg" alt="Sofiane — Expert fibre optique Fiberlink Technology">
+        <div class="caption">
+          Photo illustrative. (Tu peux mettre une vraie photo de Sofiane plus tard dans assets.)
+        </div>
+      </aside>
+
+    </section>
+
+  </div>
+</main>
+
+<script>
+  function initDropdown(id){
+    const drop = document.getElementById(id);
+    if(!drop) return;
+
+    const btn = drop.querySelector("button");
+
+    btn.addEventListener("click", () => {
+      const isOpen = drop.classList.toggle("open");
+      btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    document.addEventListener("click", (e) => {
+      if(!drop.contains(e.target)){
+        drop.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+
+  initDropdown("dropAbout");
+  initDropdown("dropServices");
+</script>
+
+</body>
+</html>
