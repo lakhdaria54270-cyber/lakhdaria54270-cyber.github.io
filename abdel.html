@@ -1,8 +1,8 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Abdel — Expert Fibre Optique | Fiberlink Technology</title>
 
 <style>
@@ -12,23 +12,22 @@
   --text:#EAF0FF;
   --muted:#A8B3D6;
   --line:rgba(255,255,255,.08);
+  --shadow:0 24px 60px rgba(0,0,0,.45);
   --green:#35ff7a;
-  --blue:#7dd3fc;
 }
 
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
+  font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial;
   background:var(--bg);
   color:var(--text);
 }
 a{text-decoration:none;color:inherit}
-.wrap{max-width:1100px;margin:auto;padding:0 20px}
+.wrap{max-width:1100px;margin:auto;padding:0 18px}
 
-/* HEADER */
 header{
-  background:rgba(7,10,18,.9);
+  background:rgba(7,10,18,.75);
   backdrop-filter:blur(12px);
   border-bottom:1px solid var(--line);
 }
@@ -36,7 +35,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
-  padding:18px 0;
+  padding:16px 0;
 }
 .brand{
   font-weight:900;
@@ -44,7 +43,7 @@ header{
 }
 .menu{
   display:flex;
-  gap:18px;
+  gap:14px;
 }
 .menu a{
   font-size:13px;
@@ -52,43 +51,50 @@ header{
 }
 .menu a:hover{color:var(--text)}
 
-main{padding:50px 0}
+main{padding:40px 0}
 
 /* HERO */
 .hero{
-  background:linear-gradient(145deg,#0c1020,#0a0f1c);
+  background:rgba(12,16,32,.6);
   border:1px solid var(--line);
-  border-radius:28px;
-  padding:30px;
-  box-shadow:0 30px 80px rgba(0,0,0,.5);
+  border-radius:24px;
+  padding:28px;
+  box-shadow:var(--shadow);
 }
 
 .hero-grid{
   display:grid;
-  grid-template-columns:380px 1fr;
-  gap:35px;
+  grid-template-columns:360px 1fr;
+  gap:24px;
   align-items:center;
 }
 
 /* PHOTO RECTANGLE */
-.photo-box{
-  position:relative;
-  width:100%;
-  height:260px;
-  border-radius:22px;
-  overflow:hidden;
-  box-shadow:0 40px 120px rgba(0,0,0,.6);
+.photo-wrap{
+  display:flex;
+  justify-content:center;
 }
 
-/* halo lumineux */
+.photo-box{
+  width:100%;
+  max-width:360px;
+  height:240px;
+  border-radius:22px;
+  overflow:hidden;
+  position:relative;
+  border:1px solid rgba(255,255,255,.12);
+  box-shadow:0 40px 90px rgba(0,0,0,.55);
+}
+
 .photo-box::before{
   content:"";
   position:absolute;
-  inset:-15px;
+  inset:-10px;
+  border-radius:28px;
   background:
-    radial-gradient(circle at 20% 30%, rgba(53,255,122,.3), transparent 60%),
-    radial-gradient(circle at 80% 70%, rgba(125,211,252,.3), transparent 60%);
-  filter:blur(30px);
+    radial-gradient(circle at 20% 30%, rgba(53,255,122,.25), transparent 60%),
+    radial-gradient(circle at 80% 70%, rgba(125,211,252,.25), transparent 60%);
+  filter:blur(20px);
   z-index:0;
 }
 
@@ -100,44 +106,28 @@ main{padding:50px 0}
   z-index:1;
 }
 
-/* Overlay texte sur image */
-.photo-overlay{
-  position:absolute;
-  bottom:0;
-  left:0;
-  right:0;
-  padding:18px;
-  background:linear-gradient(to top, rgba(0,0,0,.85), transparent);
-  z-index:2;
-}
-
-.photo-overlay h1{
-  margin:0;
-  font-size:22px;
+/* TEXT */
+.hero h1{
+  margin:0 0 10px;
+  font-size:32px;
   font-weight:900;
 }
 
-.photo-overlay span{
-  font-size:12px;
-  color:var(--green);
-  font-weight:600;
-}
-
-/* TEXTE */
-.hero p{
+.subtitle{
   color:var(--muted);
-  line-height:1.7;
   font-size:14px;
+  line-height:1.7;
 }
 
 .badges{
   display:flex;
   flex-wrap:wrap;
   gap:10px;
-  margin-top:15px;
+  margin-top:14px;
 }
+
 .badge{
-  padding:8px 14px;
+  padding:8px 12px;
   border-radius:999px;
   border:1px solid var(--line);
   font-size:12px;
@@ -145,32 +135,34 @@ main{padding:50px 0}
   background:rgba(255,255,255,.03);
 }
 
-/* CARD CV */
+/* SECTIONS */
 .card{
-  margin-top:25px;
-  padding:25px;
-  border-radius:22px;
-  background:rgba(12,16,32,.7);
+  margin-top:20px;
+  padding:22px;
+  border-radius:24px;
+  background:rgba(12,16,32,.6);
   border:1px solid var(--line);
+  box-shadow:var(--shadow);
 }
 
 .card h2{
-  margin:0 0 12px;
+  margin:0 0 10px;
   font-size:18px;
 }
 
-.card ul{
-  padding-left:18px;
+.card p, .card li{
+  font-size:14px;
   color:var(--muted);
   line-height:1.8;
-  font-size:14px;
 }
+
+ul{padding-left:18px}
 
 /* CTA */
 .cta{
-  margin-top:20px;
+  margin-top:16px;
   display:flex;
-  gap:15px;
+  gap:12px;
   flex-wrap:wrap;
 }
 
@@ -184,13 +176,13 @@ main{padding:50px 0}
 }
 
 .btn.primary{
-  background:linear-gradient(135deg,var(--green),var(--blue));
+  background:linear-gradient(135deg,#35ff7a,#7dd3fc);
   color:#071015;
   border:none;
 }
 
 .btn:hover{
-  transform:translateY(-3px);
+  transform:translateY(-2px);
   transition:.2s;
 }
 
@@ -223,21 +215,21 @@ main{padding:50px 0}
 <section class="hero">
   <div class="hero-grid">
 
-    <!-- PHOTO -->
-    <div class="photo-box">
-      <img src="assets/abdel.jpg" alt="Abdel Expert Fibre">
-      <div class="photo-overlay">
-        <h1>Abdel</h1>
-        <span>Expert Fibre Optique Senior</span>
+    <!-- PHOTO GAUCHE -->
+    <div class="photo-wrap">
+      <div class="photo-box">
+        <!-- Mets ta vraie photo ici -->
+        <img src="assets/abdel.jpg" alt="Abdel - Expert Fibre">
       </div>
     </div>
 
-    <!-- DESCRIPTION -->
+    <!-- PROFIL DROITE -->
     <div>
-      <p>
-        Technicien expert spécialisé en déploiement FTTH, FTTO et FTTE.
-        Maîtrise complète des mesures OTDR, bilans optiques, raccordements,
-        diagnostics et conformité opérateur.
+      <h1>Abdel</h1>
+      <p class="subtitle">
+        Technicien Expert Fibre Optique — FTTH / FTTO / FTTE<br>
+        +15 ans d'expérience terrain, spécialisé en mesures OTDR,
+        bilans optiques et mise en conformité opérateur.
       </p>
 
       <div class="badges">
@@ -249,12 +241,8 @@ main{padding:50px 0}
       </div>
 
       <div class="cta">
-        <a class="btn primary" href="mailto:contact@fiberlinktechnology.fr">
-          Contacter Abdel
-        </a>
-        <a class="btn" href="tel:+33766660585">
-          +33 07 66 66 05 85
-        </a>
+        <a class="btn primary" href="mailto:contact@fiberlinktechnology.fr">Contacter Abdel</a>
+        <a class="btn" href="tel:+33766660585">+33 07 66 66 05 85</a>
       </div>
     </div>
 
@@ -262,14 +250,23 @@ main{padding:50px 0}
 </section>
 
 <section class="card">
-  <h2>Compétences clés</h2>
+  <h2>Expertise technique</h2>
   <ul>
     <li>Raccordement fibre FTTH / FTTO / FTTE</li>
-    <li>Soudures fusion & organisation tiroirs optiques</li>
-    <li>Mesures réflectométriques OTDR</li>
-    <li>Analyse pertes et bilans optiques</li>
-    <li>Recherche de défauts réseau</li>
-    <li>Validation conformité opérateur</li>
+    <li>Soudures fusion & organisation fibre</li>
+    <li>Mesures OTDR & analyse de courbes</li>
+    <li>Diagnostic défaut réseau (macro/micro-courbure)</li>
+    <li>Validation et conformité opérateur</li>
+  </ul>
+</section>
+
+<section class="card">
+  <h2>Qualités professionnelles</h2>
+  <ul>
+    <li>Autonomie et rigueur terrain</li>
+    <li>Respect strict des normes sécurité</li>
+    <li>Communication claire avec équipes et clients</li>
+    <li>Travail propre, structuré et durable</li>
   </ul>
 </section>
 
